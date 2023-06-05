@@ -18,17 +18,18 @@ enum FishSize
 UENUM(BlueprintType)
 enum FishType
 {
+	Rockfish,
 	Clownfish,
 	Cowfish,
 	Octopus,
 	Crab,
-	Humpbackfish,
+	Humpback,
 	Jellyfish,
 	Lionfish,
 	Pufferfish,
 	Seabunny,
-	Smallfish,
-	Upgradefish,
+	Bigeye,
+	GoldFish,
 };
 
 USTRUCT(BlueprintType)

@@ -68,45 +68,49 @@ void ABubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 			return;
 		}
 		
-		bShouldMove = false;
-		
-		
-		if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
-		{
-			FFish Fish = FishActor->Fish;
-			FishingGameInstance->CaughtFish(Fish);
-
-			if (Fish.Size.GetValue() / 3.f > Size && !bIgnoreSize)
-			{
-				PopBubble();
-				return;
-			}
-		
-			if (AFishingGamemode* FishingGamemode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld())))
-			{
-				FishingGamemode->FishCaught(TArray<int> { 1 }, TArray<float> { (float)Fish.Size.GetValue() });
-			}
-		}
-
-		this->CaughtFish = FishActor;
-		Time = UGameplayStatics::GetTimeSeconds(GetWorld());
-		StartLocation = GetActorLocation();
-		StartScale = GetActorScale3D();
-		
-		TargetLocation = FishActor->BubbleMesh->GetComponentLocation();
-		TargetScale = FishActor->BubbleMesh->GetComponentScale();
-		
-		FTimerHandle CatchingHandle;
-		FTimerDelegate CatchingDelegate;
-		CatchingDelegate.BindUObject(this, &ABubble::CaptureFish);
-		GetWorldTimerManager().SetTimer(CatchingHandle, CatchingDelegate, 0.001f, true);
-		
-		FishActor->bShouldMove = false;
+		CatchFish(FishActor);
 		
 		return;
 	}
 
 	PopBubble();
+}
+
+void ABubble::CatchFish(AFishActor* FishActor)
+{
+	bShouldMove = false;
+		
+	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
+	{
+		FFish Fish = FishActor->Fish;
+		FishingGameInstance->CaughtFish(Fish);
+
+		if ((Fish.Size.GetValue() + 1) / 2.f > Size && !bIgnoreSize)
+		{
+			PopBubble();
+			return;
+		}
+		
+		if (AFishingGamemode* FishingGamemode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld())))
+		{
+			FishingGamemode->FishCaught(TArray<int> { 1 }, TArray<float> { (float)Fish.Size.GetValue() + 1 });
+		}
+	}
+
+	this->CaughtFish = FishActor;
+	Time = UGameplayStatics::GetTimeSeconds(GetWorld());
+	StartLocation = GetActorLocation();
+	StartScale = GetActorScale3D();
+		
+	TargetLocation = FishActor->BubbleMesh->GetComponentLocation();
+	TargetScale = FishActor->BubbleMesh->GetComponentScale();
+		
+	FTimerHandle CatchingHandle;
+	FTimerDelegate CatchingDelegate;
+	CatchingDelegate.BindUObject(this, &ABubble::CaptureFish);
+	GetWorldTimerManager().SetTimer(CatchingHandle, CatchingDelegate, 0.001f, true);
+	
+	FishActor->bShouldMove = false;
 }
 
 void ABubble::PopBubble()

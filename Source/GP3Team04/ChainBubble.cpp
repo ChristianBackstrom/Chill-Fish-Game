@@ -13,38 +13,50 @@ void AChainBubble::TeleportToFish()
 	FCollisionShape CollisionShape;
 	CollisionShape.SetSphere(Range);
 
-	bool bHit = GetWorld()->SweepMultiByChannel(HitResults, TraceStart, TraceEnd, FQuat::Identity,
-	                                            ECC_GameTraceChannel1, CollisionShape);
+	FCollisionObjectQueryParams ObjectQueryParams;
+	ObjectQueryParams.AddObjectTypesToQuery(ECC_GameTraceChannel1);
+	
+	GetWorld()->SweepMultiByObjectType(HitResults, TraceStart, TraceEnd, FQuat::Identity, ObjectQueryParams, CollisionShape);
 
-	if (bHit)
+
+	float Length = 100000000.f;
+	for (const FHitResult& HitResult : HitResults)
 	{
-		for (const FHitResult& HitResult : HitResults)
+		AActor* HitActor = HitResult.GetActor();
+		if (AFishActor* FishActor = Cast<AFishActor>(HitActor))
 		{
-			AActor* HitActor = HitResult.GetActor();
-			if (HitActor != this && HitActor->IsA<AFishActor>())
+			float distance = FVector::Distance(HitActor->GetActorLocation(), GetActorLocation());
+
+			if (FishActorsCaught.Contains(FishActor)) continue;
+
+			if (distance < Length)
 			{
-				NearestActor = HitActor;
-				break;
+				Length = distance;
+				NearestActor = FishActor;
 			}
 		}
-
-		if (NearestActor)
-		{
-			FVector FishLocation = NearestActor->GetActorLocation();
-
-
-			TargetLocation = FishLocation;
-			StartLocation = GetActorLocation();
-
-			SetActorTickEnabled(true);
-
-			Time = GetWorld()->GetTimeSeconds();
-			FTimerHandle TimerHandle;
-			FTimerDelegate Delegate;
-			Delegate.BindUObject(this, &AChainBubble::LerpProcess);
-			GetWorldTimerManager().SetTimer(TimerHandle, Delegate, 0.001f, true);
-		}
 	}
+
+	if (NearestActor)
+	{
+		FishActorsCaught.AddUnique(NearestActor);
+		
+		StartLocation = GetActorLocation();
+		StartScale = GetActorScale3D();
+		
+		TargetLocation = NearestActor->BubbleMesh->GetComponentLocation();
+		TargetScale = NearestActor->BubbleMesh->GetComponentScale() / 2.f;
+		NearestActor->bShouldMove = false;
+		
+		Time = GetWorld()->GetTimeSeconds();
+		FTimerHandle TimerHandle;
+		FTimerDelegate Delegate;
+		Delegate.BindUObject(this, &AChainBubble::LerpProcess);
+		GetWorldTimerManager().SetTimer(TimerHandle, Delegate, 0.001f, true);
+		return;
+	}
+
+	PopBubble();
 }
 
 void AChainBubble::LerpProcess()
@@ -54,15 +66,20 @@ void AChainBubble::LerpProcess()
 	float LerpAlpha = FMath::Clamp(ElapsedTime / LerpDuration, 0.0f, 1.0f);
 	LerpAlpha = UKismetMathLibrary::Ease(0, 1.f, LerpAlpha, EEasingFunc::EaseInOut);
 
-	FVector NewLerpLocation = FMath::Lerp(StartLocation, TargetLocation, LerpAlpha);
-	SetActorLocation(NewLerpLocation);
+	FVector LerpedLocation = FMath::Lerp(StartLocation, TargetLocation, LerpAlpha);
+	// FVector LerpedScale = FMath::Lerp(StartScale, TargetScale, LerpAlpha);
+	
+	SetActorLocation(LerpedLocation);
+	// SetActorScale3D(LerpedScale);
 
 	if (LerpAlpha >= 1.0f)
 	{
-		ABubble* Bubble = GetWorld()->SpawnActor<ABubble>(ABubble::StaticClass(), NearestActor->GetActorLocation(), FRotator::ZeroRotator);
+		ABubble* Bubble = GetWorld()->SpawnActor<ABubble>(DefaultBubble, NearestActor->BubbleMesh->GetComponentLocation(), NearestActor->BubbleMesh->GetComponentRotation());
+		Bubble->SetActorScale3D(GetActorScale3D());
+		Bubble->bIgnoreSize = true;
+		Bubble->CatchFish(NearestActor);
 		
 		GetWorldTimerManager().ClearAllTimersForObject(this);
-		SetActorTickEnabled(false);
 		LerpProcessCompleted();
 	}
 }
@@ -70,6 +87,7 @@ void AChainBubble::LerpProcess()
 void AChainBubble::LerpProcessCompleted()
 {
 	MaxFish--;
+	NearestActor = nullptr;
 
 	if (MaxFish > 0)
 	{
@@ -77,21 +95,25 @@ void AChainBubble::LerpProcessCompleted()
 		return;
 	}
 
-	Destroy();
+	PopBubble();
 }
 
 void AChainBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
                                   UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
                                   const FHitResult& SweepResult)
 {
+	if (Cast<ABubble>(OtherActor)) return;
 	if (!bShouldCoolide) return;
 
 	bShouldCoolide = false;
+	bShouldMove = false;
 
-	if (Cast<ABubble>(OtherActor)) return;
 
 	if (AFishActor* FishActor = Cast<AFishActor>(OtherActor))
 	{
 		TeleportToFish();
+		return;
 	}
+
+	PopBubble();
 }

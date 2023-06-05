@@ -17,12 +17,15 @@ class GP3TEAM04_API AChainBubble : public ABubble
 protected:
 	UPROPERTY(EditAnywhere)
 	float LerpDuration;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<ABubble> DefaultBubble;
 	
-	UPROPERTY()
+	UPROPERTY(EditAnywhere)
 	int MaxFish = 5;
 
-	UPROPERTY()
-	float Range = 10000.f;
+	UPROPERTY(EditAnywhere)
+	float Range = 300.f;
 
 	UPROPERTY()
 	FVector NewLocation;
@@ -31,11 +34,20 @@ protected:
 	TArray<AActor*> FoundActors;
 
 	UPROPERTY()
-	AActor* NearestActor;
+	AFishActor* NearestActor;
+
+private:
+	TArray<AFishActor*> FishActorsCaught;
+
+protected:
 	
 	UFUNCTION()
 	void TeleportToFish();
+
+	UFUNCTION()
 	void LerpProcess();
+
+	UFUNCTION()
 	void LerpProcessCompleted();
 
 	virtual void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;

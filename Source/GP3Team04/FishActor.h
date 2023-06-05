@@ -37,7 +37,10 @@ public:
 	TArray<UMaterial*> InstanceMaterial;
 
 	FFish Fish;
-
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
+	TEnumAsByte<FishType> TypeOfFish;
+	
 	UPROPERTY()
 	FVector OldLocation;
 
@@ -49,13 +52,13 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* BubbleMesh;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	USphereComponent* SphereCollider;
 
 private:
 	UPROPERTY(EditAnywhere)
 	USceneComponent* Root;
-	
-	UPROPERTY(EditAnywhere)
-	USphereComponent* SphereCollider;
 
 	// Fish initial swim speed.
 	UPROPERTY(EditAnywhere, Category = "Config")

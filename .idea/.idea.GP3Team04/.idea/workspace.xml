@@ -6,7 +6,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GP3Team04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GP3Team04/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Cabin_LP_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Cabin_LP_001.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Desk_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Desk_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Engin_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Engin_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Hull_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Hull_LP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Interior_LP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Propelar_LP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Shimney_LP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Unseen_LP_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Unseen_LP_001.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BoatMechanics/BP_MovingBoat.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BoatMechanics/BP_MovingBoat.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_BasicFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_BasicFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_CowFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_CowFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_FishActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_FishActor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Humpback.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Humpback.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_LionFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_LionFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Octopus.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Octopus.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_PufferFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_PufferFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_SmallFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_SmallFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_UpgradeFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_UpgradeFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Player/BP_Movement.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Player/BP_Movement.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ChainBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ChainBubble.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/ArtistCorner.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/ArtistCorner.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/TestLevels/Kim.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/TestLevels/Kim.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_BaseColor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_BaseColor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_Normal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_Normal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_OcclusionRoughnessMetallic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_OcclusionRoughnessMetallic.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_BaseColor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_BaseColor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_Normal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_Normal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_OcclusionRoughnessMetallic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_OcclusionRoughnessMetallic.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_BaseColor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_BaseColor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_Normal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_Normal.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_OcclusionRoughnessMetallic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_OcclusionRoughnessMetallic.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Music/MS_MusicTrack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Music/MS_MusicTrack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/BasicWidget.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_Aim.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_Aim.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <option name="SHOW_DIALOG" value="false" />
@@ -243,7 +284,7 @@
       <workItem from="1685446143381" duration="10824000" />
       <workItem from="1685603434221" duration="13041000" />
       <workItem from="1685689737914" duration="14502000" />
-      <workItem from="1685949570552" duration="7736000" />
+      <workItem from="1685949570552" duration="17777000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
@@ -448,7 +489,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685704955961</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added ignore file">
+      <created>1685957483242</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1685957483242</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Init">
+      <created>1685957530224</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1685957530224</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,8 +513,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Sending caught fish with POP event now" />
-    <MESSAGE value="FishPop is called when bubble pops with fish and POP when without Fish" />
     <MESSAGE value="FishPop Event removed and gone back to what it used to be" />
     <MESSAGE value="Float duration is readable from blueprint now" />
     <MESSAGE value="FishSize Enum updated with corresponding ints" />
@@ -483,7 +536,9 @@
     <MESSAGE value="Made enums blueprint types" />
     <MESSAGE value="Added a lerp function to capturing bubbles" />
     <MESSAGE value="Made FishSize have default values in enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made FishSize have default values in enum" />
+    <MESSAGE value="Added ignore file" />
+    <MESSAGE value="Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
