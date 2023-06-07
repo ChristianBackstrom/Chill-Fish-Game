@@ -6,7 +6,10 @@
 #include "Engine/GameInstance.h"
 #include "FishingGameInstance.generated.h"
 
+class AFishActor;
 class ABubble;
+
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnFishCaught, const FFish&);
 
 UENUM(BlueprintType)
 enum FishSize
@@ -43,7 +46,10 @@ public:
 	TEnumAsByte<FishSize> Size;
 
 	UPROPERTY(EditAnywhere)
-	TEnumAsByte<FishType> Type;	
+	TEnumAsByte<FishType> Type;
+
+	UPROPERTY(EditAnywhere)
+	UTexture2D* FishImage;
 };
 
 
@@ -62,6 +68,8 @@ public:
 
 	UPROPERTY(BlueprintReadWrite)
 		int Score;
+
+	FOnFishCaught OnFishCaught;
 };
 
 

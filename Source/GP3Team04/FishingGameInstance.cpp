@@ -6,4 +6,5 @@
 void UFishingGameInstance::CaughtFish(const FFish& Fish)
 {
 	CaughtFishies.Add(Fish);
+	OnFishCaught.Broadcast(Fish);
 }

@@ -22,6 +22,7 @@ public:
 	AFishActor();
     // Called every frame
 	virtual void Tick(float DeltaTime) override;
+	virtual void BeginPlay() override;
 
 	UFUNCTION()
 	void FishIsCaught();

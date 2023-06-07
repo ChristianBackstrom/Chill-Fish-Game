@@ -12,8 +12,8 @@
 ABubbleUpgradeHandler::ABubbleUpgradeHandler()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
+	PrimaryActorTick.bCanEverTick = false;
+	
 }
 
 // Called when the game starts or when spawned
@@ -27,17 +27,31 @@ void ABubbleUpgradeHandler::BeginPlay()
 	FishingGameMode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld()));
 	FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	BubbleShooter = Cast<ABubbleShooter>(UGameplayStatics::GetActorOfClass(GetWorld(), ABubbleShooter::StaticClass()));
+
+	if (IsValid(FishingGameInstance))
+		FishingGameInstance->OnFishCaught.AddUObject(this, &ABubbleUpgradeHandler::FishCaught);
 }
 
-// Called every frame
-void ABubbleUpgradeHandler::Tick(float DeltaTime)
+void ABubbleUpgradeHandler::ChoosenBubble(TSubclassOf<ABubble> Bubble)
 {
-	Super::Tick(DeltaTime);
-	if (!IsValid(FishingGameMode) || !bCheckForScore) return;
-	
-	if (FishingGameMode->Score >= CurrentObjective.Score)
+	BubbleShooter->AddUpgradedBubble(Bubble);
+	FishingGameInstance->UnlockedBubbles.AddUnique(Bubble);
+}
+
+void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
+{
+	CurrentObjective.FishCaught(Fish);
+
+	for (auto FishAmount : CurrentObjective.FishToCatch)
 	{
-		bCheckForScore = false;
+		FString Amount = "Fishes Needed ";
+		Amount.Append(FString::SanitizeFloat(FishAmount.NeededAmount));
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1,10.f, FColor::Green, Amount);
+	}
+	
+	if (CurrentObjective.Completed())
+	{
 		TArray<TSubclassOf<ABubble>> Bubbles = CurrentObjective.AvailableBubbles;
 
 		for (TSubclassOf<ABubble> Bubble : Bubbles)
@@ -47,18 +61,23 @@ void ABubbleUpgradeHandler::Tick(float DeltaTime)
 				Bubbles.Remove(Bubble);
 			}
 		}
+		
 		if (Bubbles.Num() > 0)
 			ObjectiveCompleted(Bubbles);
-		if (CurrentIndex >= Objectives.Num() - 1) return;
+		
 		CurrentIndex++;
+
+		if (CurrentIndex >= Objectives.Num())
+		{
+			if (GEngine)
+				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, "NO MORE OBJECTIVES");
+
+			return;
+		}
+
 		CurrentObjective = Objectives[CurrentIndex];
 	}
 }
 
-void ABubbleUpgradeHandler::ChoosenBubble(TSubclassOf<ABubble> Bubble)
-{
-	BubbleShooter->AddUpgradedBubble(Bubble);
-	FishingGameInstance->UnlockedBubbles.AddUnique(Bubble);
-}
 
 

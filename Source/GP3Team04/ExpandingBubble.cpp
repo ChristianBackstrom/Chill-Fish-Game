@@ -71,7 +71,7 @@ void AExpandingBubble::ExpandEnded()
 	{
 		for (AFishActor* FishActor : CaughtFish)
 		{
-			FishingGamemode->FishCaught(TArray<int> { 1 }, TArray<float> { (float) FishActor->Fish.Size });
+			FishingGamemode->FishCaught(TArray<int> { 1 }, TArray<float> { (float) FishActor->Fish.Size + 1 });
 		}
 	}
 

@@ -53,6 +53,12 @@ void AFishActor::Tick(float DeltaTime)
     }
 }
 
+void AFishActor::BeginPlay()
+{
+    Super::BeginPlay();
+    Fish.Type = TypeOfFish;
+}
+
 void AFishActor::FishMovement(float DeltaTime)
 {
     if (!bShouldMove)
