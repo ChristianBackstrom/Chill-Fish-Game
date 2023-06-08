@@ -222,6 +222,7 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 		StopAim(ActionValue);
 	}
 
+	StopCharging();
 	if (UGameplayStatics::GetTimeSeconds(GetWorld()) - fTimeOfCharge < MinChargeTime)
 	{
 		ChargingBubble->Destroy();

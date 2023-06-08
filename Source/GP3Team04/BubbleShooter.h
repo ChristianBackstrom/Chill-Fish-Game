@@ -78,6 +78,9 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void StartCharging();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void StopCharging();
 	
 	UFUNCTION(BlueprintImplementableEvent)
 		void Fired();
