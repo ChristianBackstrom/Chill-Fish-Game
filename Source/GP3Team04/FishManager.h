@@ -66,6 +66,18 @@ private:
 
     UPROPERTY(EditAnywhere, Category = "Config")
 	TSubclassOf<AActor> BoatActorClass;
+	
+	UPROPERTY(EditAnywhere, Category = "Config")
+	float SmallFishMinSize;
+
+	UPROPERTY(EditAnywhere, Category = "Config")
+	float SmallFishMaxSize;
+
+	UPROPERTY(EditAnywhere, Category = "Config")
+	float LargeFishMinSize;
+
+	UPROPERTY(EditAnywhere, Category = "Config")
+	float LargeFishMaxSize;
 
 	// Reference to the boat actor in the scene.
 	UPROPERTY()

@@ -22,10 +22,13 @@ struct FFishAmount
 		NeededAmount = 1;
 	}
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TEnumAsByte<FishType> Type;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UTexture2D* Image;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int NeededAmount;
 
 	bool Completed() const
@@ -69,9 +72,10 @@ public:
 
 		for (int i = 0; i < FishToCatch.Num(); ++i)
 		{
-			if (FishToCatch[i].Type != Type) continue;
+			if (FishToCatch[i].Type != Type && FishToCatch[i].Type != AnyFish) continue;
 			
 			FishToCatch[i].NeededAmount--;
+			FishToCatch[i].NeededAmount = FMath::Clamp(FishToCatch[i].NeededAmount, 0, 100000000);
 		}
 	}
 };
@@ -93,7 +97,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TArray<FObjective> Objectives;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadWrite)
 	FObjective CurrentObjective;
 
 	int CurrentIndex = 0;
@@ -106,9 +110,18 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void ObjectiveCompleted(const TArray<TSubclassOf<ABubble>>& Bubbles);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void NextObjective(FObjective Objective);
+
 	void FishCaught(const FFish& Fish);
 
 protected:
 	UFUNCTION(BlueprintCallable)
 	void ChoosenBubble(TSubclassOf<ABubble> Bubble);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void UpdateObjective();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void BlueprintBeginplay();
 };

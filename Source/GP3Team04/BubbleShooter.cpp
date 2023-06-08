@@ -352,6 +352,8 @@ void ABubbleShooter::AddUpgradedBubble(TSubclassOf<ABubble> Bubble)
 	Timers.Add(0.f);
 	Cooldowns.Add(InstantiatedBubble->Cooldown);
 
+	AddedUpgradedBubble(Bubble);
+
 	if (UpgradedBubbles.Num() == 1)
 	{
 		CurrentIndex = 0;

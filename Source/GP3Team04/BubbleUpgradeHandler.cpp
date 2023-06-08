@@ -30,6 +30,8 @@ void ABubbleUpgradeHandler::BeginPlay()
 
 	if (IsValid(FishingGameInstance))
 		FishingGameInstance->OnFishCaught.AddUObject(this, &ABubbleUpgradeHandler::FishCaught);
+
+	BlueprintBeginplay();
 }
 
 void ABubbleUpgradeHandler::ChoosenBubble(TSubclassOf<ABubble> Bubble)
@@ -41,6 +43,12 @@ void ABubbleUpgradeHandler::ChoosenBubble(TSubclassOf<ABubble> Bubble)
 void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 {
 	CurrentObjective.FishCaught(Fish);
+
+	UpdateObjective();
+	
+	if (GEngine)
+    	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, "BRUH");
+
 
 	for (auto FishAmount : CurrentObjective.FishToCatch)
 	{
@@ -76,6 +84,7 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 		}
 
 		CurrentObjective = Objectives[CurrentIndex];
+		NextObjective(CurrentObjective);
 	}
 }
 

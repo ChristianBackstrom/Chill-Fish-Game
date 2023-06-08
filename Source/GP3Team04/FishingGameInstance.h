@@ -33,6 +33,7 @@ enum FishType
 	Seabunny,
 	Bigeye,
 	GoldFish,
+	AnyFish,
 };
 
 USTRUCT(BlueprintType)

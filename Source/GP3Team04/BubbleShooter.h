@@ -52,6 +52,9 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void ChangedBubble(int Index);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void AddedUpgradedBubble(TSubclassOf<ABubble> Bubble);
 	
 private:
 	void Charge(const FInputActionValue& ActionValue, bool bStandardBubble);

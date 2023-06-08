@@ -6,48 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GP3Team04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GP3Team04/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Cabin_LP_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Cabin_LP_001.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Desk_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Desk_LP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Engin_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Engin_LP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Hull_LP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Hull_LP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Interior_LP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Propelar_LP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Shimney_LP.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Unseen_LP_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Art/StaticMeshes/Boat/SM_Boat_UV_Unseen_LP_001.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BoatMechanics/BP_MovingBoat.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BoatMechanics/BP_MovingBoat.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_BasicFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_BasicFish.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_CowFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_CowFish.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_FishActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_FishActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Humpback.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Humpback.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_LionFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_LionFish.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Octopus.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_Octopus.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_PufferFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_PufferFish.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_SmallFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_SmallFish.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_UpgradeFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Fish/BP_UpgradeFish.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Player/BP_Movement.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Player/BP_Movement.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BubbleMechanics/BP_BubbleUpgradeHandler.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BubbleMechanics/BP_BubbleUpgradeHandler.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ChainBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ChainBubble.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/ArtistCorner.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/ArtistCorner.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/TestLevels/Kim.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/TestLevels/Kim.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_BaseColor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_BaseColor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_Normal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_Normal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_OcclusionRoughnessMetallic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_001_OcclusionRoughnessMetallic.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_BaseColor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_BaseColor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_Normal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_Normal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_OcclusionRoughnessMetallic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_002_OcclusionRoughnessMetallic.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_BaseColor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_BaseColor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_Normal.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_Normal.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_OcclusionRoughnessMetallic.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/TextureImages/Boat/boat_Material_005_OcclusionRoughnessMetallic.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Music/MS_MusicTrack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Music/MS_MusicTrack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/BasicWidget.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_Aim.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_Aim.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_UpgradedBubbleUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_UpgradedBubbleUI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,10 +28,10 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/ChainBubble.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/ChainBubble.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.h" root0="FORCE_HIGHLIGHTING" />
@@ -128,7 +93,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Perforce&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -285,6 +250,9 @@
       <workItem from="1685603434221" duration="13041000" />
       <workItem from="1685689737914" duration="14502000" />
       <workItem from="1685949570552" duration="17777000" />
+      <workItem from="1686121693989" duration="10755000" />
+      <workItem from="1686134795301" duration="4240000" />
+      <workItem from="1686146069509" duration="4211000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
@@ -503,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685957530224</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Clamping needed amount between 0 and infinity">
+      <created>1686146942513</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1686146942513</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +488,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="FishPop Event removed and gone back to what it used to be" />
     <MESSAGE value="Float duration is readable from blueprint now" />
     <MESSAGE value="FishSize Enum updated with corresponding ints" />
     <MESSAGE value="No more Errors" />
@@ -538,7 +512,8 @@
     <MESSAGE value="Made FishSize have default values in enum" />
     <MESSAGE value="Added ignore file" />
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="Clamping needed amount between 0 and infinity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clamping needed amount between 0 and infinity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

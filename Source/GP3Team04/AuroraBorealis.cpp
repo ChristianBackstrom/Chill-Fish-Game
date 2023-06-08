@@ -26,14 +26,10 @@ void AAuroraBorealis::HitMesh(UPrimitiveComponent* HitComponent, AActor* OtherAc
 {
 	if (ABubble* Bubble = Cast<ABubble>(OtherActor))
 	{
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1,10.f, FColor::White, "HIT");
 		
 		const FVector ReflectedVector = FMath::GetReflectionVector(Bubble->GetActorForwardVector(), Hit.Normal);
 		
 		Bubble->SetActorRotation(ReflectedVector.Rotation());
-
-		DrawDebugDirectionalArrow(GetWorld(), Hit.ImpactPoint, Hit.ImpactPoint + ReflectedVector, 2.f, FColor::Green, false, 10.f);
 	}
 }
 

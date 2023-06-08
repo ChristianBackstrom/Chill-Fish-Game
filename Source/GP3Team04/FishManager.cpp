@@ -184,13 +184,16 @@ void AFishManager::SpawnFish()
 
         FVector Size = FVector::One();
 
+        float SmallFishSize = FMath::RandRange(SmallFishMinSize, SmallFishMaxSize);
+        float LargeFishSize = FMath::RandRange(LargeFishMinSize, LargeFishMaxSize);
+        
         switch (NewFish->Fish.Size)
         {
             case Small:
-                Size = FVector(1);
+                Size = FVector(SmallFishSize);
                 break;
             case Large:
-                Size = FVector(2);
+                Size = FVector(LargeFishSize);
                 break;
         }
         NewFish->SetActorScale3D(Size);
