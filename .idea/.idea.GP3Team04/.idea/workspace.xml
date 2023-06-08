@@ -6,12 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BubbleMechanics/BP_BubbleUpgradeHandler.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BubbleMechanics/BP_BubbleUpgradeHandler.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_UpgradedBubbleUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_UpgradedBubbleUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
@@ -28,9 +22,7 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -253,6 +245,7 @@
       <workItem from="1686121693989" duration="10755000" />
       <workItem from="1686134795301" duration="4240000" />
       <workItem from="1686146069509" duration="4211000" />
+      <workItem from="1686207993927" duration="443000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
