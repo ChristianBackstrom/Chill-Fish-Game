@@ -100,9 +100,6 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	FObjective CurrentObjective;
 
-	UPROPERTY(EditAnywhere)
-	bool bMainObjective;
-
 	int CurrentIndex = 0;
 
 	AFishingGamemode* FishingGameMode;

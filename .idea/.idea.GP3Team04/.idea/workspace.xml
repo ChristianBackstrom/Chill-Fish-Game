@@ -5,12 +5,21 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" afterDir="false" />
+    <list default="true" id="6307ab82-67a9-4854-9a17-af75ab5cc72b" name="MyStuff" comment="MyStuff">
+      <change afterPath="$PROJECT_DIR$/Content/Data/Dialogue1.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/GP3Team04/Dialogue.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/GP3Team04/Dialogue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/GP3Team04/DialogueManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/GP3Team04/DialogueManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/SFX/MS_WhaleShots.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/SFX/MS_WhaleShots.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/SFX/S_GoldFish.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/SFX/S_GoldFish.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GP3Team04.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/GP3Team04.uproject" afterDir="false" />
     </list>
+    <list id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="" />
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
+    <list id="4013cf53-e7ba-46f3-a0e4-9298617b82a4" name="Petters Changelist" comment="Petters Changelist">
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BoatMechanics/BP_MovingBoat.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BoatMechanics/BP_MovingBoat.uasset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +51,8 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/LightPillar.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MagnetBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MagnetBubble.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MainObjective.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MainObjective.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Movement.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Movement.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -69,7 +80,12 @@
             </ConnectionKeyBean>
           </key>
           <value>
-            <PerforceNumberNameMap />
+            <PerforceNumberNameMap>
+              <option name="mapping">
+                <entry key="262018" value="MyStuff" />
+                <entry key="262036" value="Petters Changelist" />
+              </option>
+            </PerforceNumberNameMap>
           </value>
         </entry>
       </map>
@@ -247,7 +263,8 @@
       <workItem from="1686121693989" duration="10755000" />
       <workItem from="1686134795301" duration="4240000" />
       <workItem from="1686146069509" duration="4211000" />
-      <workItem from="1686207993927" duration="1196000" />
+      <workItem from="1686207993927" duration="6870000" />
+      <workItem from="1686216789516" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
