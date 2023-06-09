@@ -24,14 +24,14 @@ void AMagnetBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* 
 	// create a collision sphere
 	FCollisionShape MyColSphere = FCollisionShape::MakeSphere(SphereRadius);
 	
-	if (!GetWorld()->SweepMultiByChannel(OutHits, SweepLocation, SweepLocation, FQuat::Identity, ECC_WorldStatic, MyColSphere))
+	if (!World->SweepMultiByChannel(OutHits, SweepLocation, SweepLocation, FQuat::Identity, ECC_WorldStatic, MyColSphere))
 		return;
 	
 	for (FHitResult OutHit : OutHits)
 	{
 		if (AFishActor* FishActor = Cast<AFishActor>(OutHit.HitObjectHandle.FetchActor()))
 		{
-			FishActor->bShouldMove = false;
+			FishActor->bEnabled = false;
 			FishActor->SetActorEnableCollision(false);
 			FishToPull.Add(FishActor);
 			FishStartPositions.Add(FishActor->GetActorLocation());
@@ -40,7 +40,7 @@ void AMagnetBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* 
 	
 	FishCaught(nullptr);
 
-	Time = UGameplayStatics::GetTimeSeconds(GetWorld());
+	Time = UGameplayStatics::GetTimeSeconds(World);
 
 	FTimerHandle TimerHandle;
 	FTimerDelegate Delegate;
@@ -51,16 +51,13 @@ void AMagnetBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* 
 
 void AMagnetBubble::PullFish()
 {
-	float TotalTime = FMath::Clamp((UGameplayStatics::GetTimeSeconds(GetWorld()) - Time) / DragTime, 0.f, 1.f);
-
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, .01f, FColor::White, FString::SanitizeFloat(TotalTime));
-
+	float TotalTime = FMath::Clamp((UGameplayStatics::GetTimeSeconds(World) - Time) / DragTime, 0.f, 1.f);
+	
 	if (TotalTime >= 1.f)
 	{
 		GetWorldTimerManager().ClearAllTimersForObject(this);
 		
-		Time = UGameplayStatics::GetTimeSeconds(GetWorld());
+		Time = UGameplayStatics::GetTimeSeconds(World);
 		FTimerHandle TimerHandle;
 		FTimerDelegate Delegate;
 		Delegate.BindUObject(this, &AMagnetBubble::ReleaseFish);
@@ -81,13 +78,13 @@ void AMagnetBubble::PullFish()
 
 void AMagnetBubble::ReleaseFish()
 {
-	float TotalTime = FMath::Clamp((UGameplayStatics::GetTimeSeconds(GetWorld()) - Time) / HoldTime, 0.f, 1.f);
+	float TotalTime = (UGameplayStatics::GetTimeSeconds(World) - Time) / HoldTime;
 
 	if (TotalTime >= 1.f)
 	{
 		for (AFishActor* Fish : FishToPull)
 		{
-			Fish->bShouldMove = true;
+			Fish->bEnabled = true;
 			Fish->SetActorEnableCollision(true);
 		}
 		PopBubble();

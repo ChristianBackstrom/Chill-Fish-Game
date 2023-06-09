@@ -7,30 +7,30 @@
 #include "Sound/SoundCue.h"
 #include "Dialogue.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FDialogueData
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString Text;
 	
-	UPROPERTY(EditAnywhere)
-	USoundCue* SoundCue;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	USoundWave* SoundCue;
 };
 
 /**
  * 
  */
 UCLASS()
-class GP3TEAM04_API UDialogue : public UDataAsset
+class GP3TEAM04_API UDialogue : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<FDialogueData> DialogueDatas;
 
-	bool TryGetDialogueData(int Index, USoundCue*& SoundCue, FString& Text);
+	bool TryGetDialogueData(int Index, USoundWave*& SoundCue, FString& Text);
 };

@@ -26,6 +26,8 @@ ABubble::ABubble()
 void ABubble::BeginPlay()
 {
 	Super::BeginPlay();
+
+	World = GetWorld();
 }
 
 // Called every frame
@@ -80,25 +82,25 @@ void ABubble::CatchFish(AFishActor* FishActor)
 {
 	bShouldMove = false;
 		
-	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
+	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(World)))
 	{
 		FFish Fish = FishActor->Fish;
-		FishingGameInstance->CaughtFish(Fish);
 
-		if ((Fish.Size.GetValue() + 1) / 2.f > Size && !bIgnoreSize)
+		if (Fish.Size.GetValue() / 2.f > Size && !bIgnoreSize)
 		{
 			PopBubble();
 			return;
 		}
 		
-		if (AFishingGamemode* FishingGamemode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld())))
+		if (AFishingGamemode* FishingGamemode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(World)))
 		{
 			FishingGamemode->FishCaught(TArray<int> { 1 }, TArray<float> { (float)Fish.Size.GetValue() + 1 });
 		}
+		FishingGameInstance->CaughtFish(Fish);
 	}
 
 	this->CaughtFish = FishActor;
-	Time = UGameplayStatics::GetTimeSeconds(GetWorld());
+	Time = UGameplayStatics::GetTimeSeconds(World);
 	StartLocation = GetActorLocation();
 	StartScale = GetActorScale3D();
 		
@@ -110,6 +112,7 @@ void ABubble::CatchFish(AFishActor* FishActor)
 	CatchingDelegate.BindUObject(this, &ABubble::CaptureFish);
 	GetWorldTimerManager().SetTimer(CatchingHandle, CatchingDelegate, 0.001f, true);
 	
+	FishActor->bEnabled = false;
 	FishActor->bShouldMove = false;
 }
 
@@ -139,7 +142,7 @@ void ABubble::FloatBubble(AFishActor* Fish)
 
 void ABubble::CaptureFish()
 {
-	float TotalTime = (UGameplayStatics::GetTimeSeconds(GetWorld()) - Time) / CaptureSpeed;
+	float TotalTime = (UGameplayStatics::GetTimeSeconds(World) - Time) / CaptureSpeed;
 	TotalTime = FMath::Clamp(TotalTime, 0.f, 1.f);
 
 	FVector Location = FMath::Lerp(StartLocation, TargetLocation, TotalTime);

@@ -28,6 +28,8 @@ private:
 	const TSoftObjectPtr<UWorld> LevelToOpen;
 
 	AFishingGamemode* FishingGameMode;
+public:
+	bool bMainObjectiveCompleted = false;
 
 public:	
 	// Called every frame

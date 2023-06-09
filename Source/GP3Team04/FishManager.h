@@ -60,9 +60,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Config")
 	int32 SpecialFishAmount = 2;
 
-	// Chance of spawning big fish ex. 10 = 10%, 100 = 100%
-	UPROPERTY(EditAnywhere, Category = "Config", meta = (ClampMin = "1.0", ClampMax = "100.0"))
-	float LargeFishChance = 10;
+	// // Chance of spawning big fish ex. 10 = 10%, 100 = 100%
+	// UPROPERTY(EditAnywhere, Category = "Config", meta = (ClampMin = "1.0", ClampMax = "100.0"))
+	// float LargeFishChance = 10;
 
     UPROPERTY(EditAnywhere, Category = "Config")
 	TSubclassOf<AActor> BoatActorClass;

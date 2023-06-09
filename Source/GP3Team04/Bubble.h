@@ -110,4 +110,6 @@ protected:
 
 	FVector StartScale;
 	FVector TargetScale;
+
+	UWorld* World;
 };

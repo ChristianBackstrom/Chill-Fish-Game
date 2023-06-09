@@ -21,17 +21,21 @@ enum FishSize
 UENUM(BlueprintType)
 enum FishType
 {
-	Rockfish,
+	Angelfish,
+	Bigeye,
 	Clownfish,
 	Cowfish,
+	Devilray,
+	Rockfish,
 	Octopus,
 	Crab,
 	Humpback,
 	Jellyfish,
 	Lionfish,
+	Longnose,
 	Pufferfish,
 	Seabunny,
-	Bigeye,
+	Seahorse,
 	GoldFish,
 	AnyFish,
 };
@@ -42,15 +46,11 @@ struct FFish
 	GENERATED_BODY()
 
 public:
-	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TEnumAsByte<FishSize> Size;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TEnumAsByte<FishType> Type;
-
-	UPROPERTY(EditAnywhere)
-	UTexture2D* FishImage;
 };
 
 

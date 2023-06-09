@@ -133,6 +133,7 @@ void ABubbleShooter::EndPlay(const EEndPlayReason::Type EndPlayReason)
 
 void ABubbleShooter::Charge(const FInputActionValue& ActionValue, bool bStandardBubble)
 {
+	if (!bShouldShoot) return;
 	if (!bStandardBubble && UpgradedBubbles.Num() <= 0) return;
 	
 	if (UpgradedBubbles.Num() > 0)

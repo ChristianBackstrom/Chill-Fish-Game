@@ -70,10 +70,10 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 			}
 		}
 		
+		CurrentIndex++;
 		if (Bubbles.Num() > 0)
 			ObjectiveCompleted(Bubbles);
 		
-		CurrentIndex++;
 
 		if (CurrentIndex >= Objectives.Num())
 		{

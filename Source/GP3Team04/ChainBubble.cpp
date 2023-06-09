@@ -16,7 +16,7 @@ void AChainBubble::TeleportToFish()
 	FCollisionObjectQueryParams ObjectQueryParams;
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_GameTraceChannel1);
 	
-	GetWorld()->SweepMultiByObjectType(HitResults, TraceStart, TraceEnd, FQuat::Identity, ObjectQueryParams, CollisionShape);
+	World->SweepMultiByObjectType(HitResults, TraceStart, TraceEnd, FQuat::Identity, ObjectQueryParams, CollisionShape);
 
 
 	float Length = 100000000.f;
@@ -48,7 +48,7 @@ void AChainBubble::TeleportToFish()
 		TargetScale = NearestActor->BubbleMesh->GetComponentScale() / 2.f;
 		NearestActor->bShouldMove = false;
 		
-		Time = GetWorld()->GetTimeSeconds();
+		Time = World->GetTimeSeconds();
 		FTimerHandle TimerHandle;
 		FTimerDelegate Delegate;
 		Delegate.BindUObject(this, &AChainBubble::LerpProcess);
@@ -61,7 +61,7 @@ void AChainBubble::TeleportToFish()
 
 void AChainBubble::LerpProcess()
 {
-	float CurrentTime = GetWorld()->GetTimeSeconds();
+	float CurrentTime = World->GetTimeSeconds();
 	float ElapsedTime = CurrentTime - Time;
 	float LerpAlpha = FMath::Clamp(ElapsedTime / LerpDuration, 0.0f, 1.0f);
 	LerpAlpha = UKismetMathLibrary::Ease(0, 1.f, LerpAlpha, EEasingFunc::EaseInOut);
@@ -74,7 +74,7 @@ void AChainBubble::LerpProcess()
 
 	if (LerpAlpha >= 1.0f)
 	{
-		ABubble* Bubble = GetWorld()->SpawnActor<ABubble>(DefaultBubble, NearestActor->BubbleMesh->GetComponentLocation(), NearestActor->BubbleMesh->GetComponentRotation());
+		ABubble* Bubble = World->SpawnActor<ABubble>(DefaultBubble, NearestActor->BubbleMesh->GetComponentLocation(), NearestActor->BubbleMesh->GetComponentRotation());
 		Bubble->SetActorScale3D(GetActorScale3D());
 		Bubble->bIgnoreSize = true;
 		Bubble->CatchFish(NearestActor);

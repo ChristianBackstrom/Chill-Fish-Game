@@ -145,4 +145,7 @@ public:
 
 	UPROPERTY(BlueprintReadWrite)
 		int CurrentIndex;
+
+	UPROPERTY(BlueprintReadWrite)
+		bool bShouldShoot = true;
 };

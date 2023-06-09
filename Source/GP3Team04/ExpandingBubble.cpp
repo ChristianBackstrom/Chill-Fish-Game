@@ -29,7 +29,7 @@ void AExpandingBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActo
 		
 		if (!bExpandStarted)
 		{
-			Time = UGameplayStatics::GetTimeSeconds(GetWorld());
+			Time = UGameplayStatics::GetTimeSeconds(World);
 			bExpandStarted = true;
 			BaseScale = GetActorScale3D();
 			FTimerHandle TimerHandle;
@@ -46,7 +46,7 @@ void AExpandingBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActo
 
 void AExpandingBubble::Expand()
 {
-	float TotalTime = UGameplayStatics::GetTimeSeconds(GetWorld()) - Time;
+	float TotalTime = UGameplayStatics::GetTimeSeconds(World) - Time;
 
 	if (TotalTime >= 1.f)
 	{
@@ -59,7 +59,7 @@ void AExpandingBubble::Expand()
 void AExpandingBubble::ExpandEnded()
 {
 
-	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
+	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(World)))
 	{
 		for (AFishActor* FishActor : CaughtFish)
 		{
@@ -67,7 +67,7 @@ void AExpandingBubble::ExpandEnded()
 		}
 	}
 
-	if (AFishingGamemode* FishingGamemode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld())))
+	if (AFishingGamemode* FishingGamemode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(World)))
 	{
 		for (AFishActor* FishActor : CaughtFish)
 		{

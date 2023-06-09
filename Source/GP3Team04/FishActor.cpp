@@ -24,8 +24,6 @@ AFishActor::AFishActor()
     SphereCollider->SetCollisionResponseToAllChannels(ECR_Overlap);
     SphereCollider->OnComponentBeginOverlap.AddDynamic(this, &AFishActor::OnOverlapBegin);
     
-    FishManager = Cast<AFishManager>(UGameplayStatics::GetActorOfClass(GetWorld(), AFishManager::StaticClass()));
-
     OriginalSwimSpeed = SwimSpeed;
 
     InitialBoostDuration = BoostDuration;
@@ -51,12 +49,6 @@ void AFishActor::Tick(float DeltaTime)
             BoostDuration = InitialBoostDuration;
         }
     }
-}
-
-void AFishActor::BeginPlay()
-{
-    Super::BeginPlay();
-    Fish.Type = TypeOfFish;
 }
 
 void AFishActor::FishMovement(float DeltaTime)
@@ -124,7 +116,8 @@ void AFishActor::AvoidCollision()
 {
     if (!bBoostActive)
     {
-        SetActorLocation(OldLocation);
+        // SetActorLocation(OldLocation);
+        MoveToRandomLocation(GetActorLocation());
         ApplyStartleBoost();
         bReachedLocation = false;
     }
@@ -151,7 +144,9 @@ void AFishActor::ApplyStartleBoost()
 void AFishActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
     int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-    SetActorLocation(OldLocation);
+    if (!bEnabled) return;
+    
+    // SetActorLocation(OldLocation);
     bReachedLocation = false;
 
     AvoidCollision();

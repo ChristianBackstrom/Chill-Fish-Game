@@ -115,19 +115,21 @@ void AFishManager::SpawnFish()
             FishType = FishClass[FMath::RandRange(0, FishClass.Num() - 1)];
         }
 
+        /*
         int32 RandomSize = FMath::RandRange(1, 3);
 
         int32 RandomValue = FMath::RandRange(0, 100);
 
-        if (RandomValue < LargeFishChance)
-        {
-            RandomSize = Large;
-        }
-        else
-        {
-            RandomSize = Small;
-        }
-
+         if (RandomValue < LargeFishChance)
+         {
+             RandomSize = Large;
+         }
+         else
+         {
+             RandomSize = Small;
+         }
+        */
+        
         FVector SpawnLocation;
 
         // Attempt to find a valid spawn location
@@ -179,8 +181,8 @@ void AFishManager::SpawnFish()
 
         // Spawn the fish
         AFishActor* NewFish = GetWorld()->SpawnActor<AFishActor>(FishType, SpawnLocation, FRotator::ZeroRotator);
-
-        NewFish->Fish.Size = static_cast<FishSize>(RandomSize);
+        NewFish->FishManager = this;
+        //NewFish->Fish.Size = static_cast<FishSize>(RandomSize);
 
         FVector Size = FVector::One();
 
@@ -205,7 +207,7 @@ void AFishManager::SpawnFish()
 
             NewFish->SkeletalMesh->SetMaterial(0, NewFish->InstanceMaterial[MaterialType]);
         }
-
+        
         NewFish->FishManager = this;
         NewFish->OldLocation = SpawnLocation;
         FishList.Add(NewFish);

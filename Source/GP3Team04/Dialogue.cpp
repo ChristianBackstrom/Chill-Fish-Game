@@ -3,12 +3,12 @@
 
 #include "Dialogue.h"
 
-bool UDialogue::TryGetDialogueData(int Index, USoundCue*& SoundCue, FString& Text)
+bool UDialogue::TryGetDialogueData(int Index, USoundWave*& Sound, FString& Text)
 {
 	if (Index < DialogueDatas.Num())
 	{
 		Text = DialogueDatas[Index].Text;
-		SoundCue = DialogueDatas[Index].SoundCue;
+		Sound = DialogueDatas[Index].SoundCue;
 		return true;
 	}
 
