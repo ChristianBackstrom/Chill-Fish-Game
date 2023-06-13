@@ -45,6 +45,12 @@ struct FFish
 {
 	GENERATED_BODY()
 
+	FFish()
+	{
+		Size = Small;
+		Type = AnyFish;
+	}
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TEnumAsByte<FishSize> Size;
@@ -65,7 +71,7 @@ public:
 public:
 	TArray<FFish> CaughtFishies;
 
-	TArray<TSubclassOf<ABubble>> UnlockedBubbles;
+	TArray<TSubclassOf<ABubble>> UnlockedBubbles = TArray<TSubclassOf<ABubble>>();
 
 	UPROPERTY(BlueprintReadWrite)
 		int Score;

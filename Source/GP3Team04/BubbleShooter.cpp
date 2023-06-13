@@ -31,10 +31,11 @@ void ABubbleShooter::BeginPlay()
 		return;
 	}
 
-	// Will supply the purchased bubbles to the bubble shooter
+	// // Will supply the purchased bubbles to the bubble shooter
 	// if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
 	// {
-	// 	UpgradedBubbles = FishingGameInstance->UnlockedBubbles;
+	// 	if (FishingGameInstance->UnlockedBubbles.Num() > 0)
+	// 		UpgradedBubbles = FishingGameInstance->UnlockedBubbles;
 	// }
 
 	if (UpgradedBubbles.Num() <= 0)
@@ -105,6 +106,8 @@ void ABubbleShooter::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Could not cast Controller to APlayerController"));	
 	}
+
+	BlueprintBeginPlay();
 }
 
 void ABubbleShooter::Tick(float DeltaTime)
@@ -350,11 +353,18 @@ void ABubbleShooter::AddUpgradedBubble(TSubclassOf<ABubble> Bubble)
 {
 	ABubble* InstantiatedBubble = Bubble.GetDefaultObject();
 
+	if (UpgradedBubbles.Contains(Bubble))	return;
+
 	UpgradedBubbles.Add(Bubble);
 	Timers.Add(0.f);
 	Cooldowns.Add(InstantiatedBubble->Cooldown);
 
 	AddedUpgradedBubble(Bubble);
+
+	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
+	{
+		FishingGameInstance->UnlockedBubbles = UpgradedBubbles;
+	}
 
 	if (UpgradedBubbles.Num() == 1)
 	{

@@ -35,6 +35,7 @@ public:
 	// Sets default values for this component's properties
 	ABubbleShooter();
 
+	UFUNCTION(BlueprintCallable)
 	void AddUpgradedBubble(TSubclassOf<ABubble> Bubble);
 
 protected:
@@ -43,6 +44,9 @@ protected:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void BlueprintBeginPlay();
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void StartAim(const FInputActionValue& ActionValue);
@@ -87,6 +91,7 @@ protected:
 	
 
 	ABubble* ChargingBubble;
+	UPROPERTY(BlueprintReadWrite)
 	TSubclassOf<ABubble> SelectedBubble;
 	
 	UPROPERTY(EditAnywhere)

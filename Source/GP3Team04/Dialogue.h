@@ -12,6 +12,12 @@ struct FDialogueData
 {
 	GENERATED_BODY()
 
+	FDialogueData()
+	{
+		Text = "";
+		SoundCue = nullptr;
+	}
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString Text;

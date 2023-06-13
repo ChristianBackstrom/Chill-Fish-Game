@@ -26,7 +26,12 @@ private:
 	UPROPERTY(EditAnywhere)
 		float ExpandTime = 1.f;
 
+	UPROPERTY(EditAnywhere)
+		int MaxFish = 10;
+
 	float Time;
+
+	int FishiesCaught = 0;
 
 	FVector BaseScale;
 

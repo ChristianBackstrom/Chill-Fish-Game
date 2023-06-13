@@ -27,7 +27,7 @@ void AMainObjective::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (!IsValid(FishingGameMode)) return;
 
-	if (FishingGameMode->Score <= ScoreToReach)
+	if (FishingGameMode->Score >= ScoreToReach)
 		bMainObjectiveCompleted = true;
 }
 

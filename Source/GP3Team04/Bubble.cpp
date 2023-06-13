@@ -112,6 +112,7 @@ void ABubble::CatchFish(AFishActor* FishActor)
 	CatchingDelegate.BindUObject(this, &ABubble::CaptureFish);
 	GetWorldTimerManager().SetTimer(CatchingHandle, CatchingDelegate, 0.001f, true);
 	
+	FishActor->SetActorEnableCollision(false);
 	FishActor->bEnabled = false;
 	FishActor->bShouldMove = false;
 }

@@ -22,9 +22,17 @@ void AExpandingBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActo
 	
 	if (AFishActor* FishActor = Cast<AFishActor>(OtherActor))
 	{
+		FishiesCaught++;
+		if (FishiesCaught >= MaxFish)
+		{
+			GetWorldTimerManager().ClearAllTimersForObject(this);
+			ExpandEnded();
+		}
 		FishActor->bShouldMove = false;
 		bShouldMove = false;
 		CaughtFish.Add(FishActor);
+		FishCaught(nullptr);
+		
 
 		
 		if (!bExpandStarted)

@@ -6,12 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/TestLevels/Christian.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/TestLevels/Christian.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.h" afterDir="false" />
+    </list>
+    <list id="d912b589-c53b-4707-81f9-d701be7a0b5e" name="&lt;enter description here&gt;..." comment="&lt;enter description here&gt;&#10;&lt;saved by Perforce&gt;">
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <list id="6307ab82-67a9-4854-9a17-af75ab5cc72b" name="MyStuff" comment="MyStuff" />
@@ -23,31 +24,19 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/AuroraBorealis.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/AuroraBorealis.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/Bubble.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/Bubble.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/ChainBubble.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Dialogue.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Dialogue.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/ExpandingBubble.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/FishActor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/FishActor.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/FishActor.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/FishActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/FishManager.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/FishManager.h" root0="FORCE_HIGHLIGHTING" />
@@ -58,14 +47,10 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/GameHud.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/LightPillar.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/LightPillar.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/MagnetBubble.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MagnetBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MagnetBubble.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/MainObjective.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MainObjective.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/MainObjective.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MainObjective.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/MainObjective.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Movement.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Movement.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/NarrativeManager.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -95,7 +80,11 @@
             </ConnectionKeyBean>
           </key>
           <value>
-            <PerforceNumberNameMap />
+            <PerforceNumberNameMap>
+              <option name="mapping">
+                <entry key="264350" value="&lt;enter description here&gt;..." />
+              </option>
+            </PerforceNumberNameMap>
           </value>
         </entry>
       </map>
@@ -277,7 +266,11 @@
       <workItem from="1686216789516" duration="7930000" />
       <workItem from="1686227302911" duration="6720000" />
       <workItem from="1686294538123" duration="3036000" />
-      <workItem from="1686297700818" duration="11046000" />
+      <workItem from="1686297700818" duration="16323000" />
+      <workItem from="1686399410566" duration="1305000" />
+      <workItem from="1686558629515" duration="14175000" />
+      <workItem from="1686639877469" duration="5083000" />
+      <workItem from="1686645921730" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
@@ -538,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686311514435</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Added constructor to FFish struct">
+      <created>1686577053555</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1686577053555</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="made Popbubble to be protected and not private" />
     <MESSAGE value="Changed name on size from &quot;Big&quot; to &quot;Large&quot;" />
     <MESSAGE value="Magnet bubble now holds the fishes at the desired location for a supplied time before releasing them" />
     <MESSAGE value="Bubbles speeds up after halftime now" />
@@ -573,7 +572,8 @@
     <MESSAGE value="main objective have a bool for if its reached" />
     <MESSAGE value="Magnet bubble is working as intended" />
     <MESSAGE value="Incrementing index before running objective completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Incrementing index before running objective completed" />
+    <MESSAGE value="Added constructor to FFish struct" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added constructor to FFish struct" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

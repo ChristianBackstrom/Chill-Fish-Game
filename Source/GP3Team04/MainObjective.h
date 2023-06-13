@@ -29,6 +29,7 @@ private:
 
 	AFishingGamemode* FishingGameMode;
 public:
+	UPROPERTY(BlueprintReadOnly)
 	bool bMainObjectiveCompleted = false;
 
 public:	
