@@ -5,15 +5,7 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.h" afterDir="false" />
-    </list>
-    <list id="d912b589-c53b-4707-81f9-d701be7a0b5e" name="&lt;enter description here&gt;..." comment="&lt;enter description here&gt;&#10;&lt;saved by Perforce&gt;">
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/FishingGameInstance.h" afterDir="false" />
-    </list>
+    <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="" />
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <list id="6307ab82-67a9-4854-9a17-af75ab5cc72b" name="MyStuff" comment="MyStuff" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +18,12 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/AuroraBorealis.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" root0="FORCE_HIGHLIGHTING" />
@@ -80,11 +77,7 @@
             </ConnectionKeyBean>
           </key>
           <value>
-            <PerforceNumberNameMap>
-              <option name="mapping">
-                <entry key="264350" value="&lt;enter description here&gt;..." />
-              </option>
-            </PerforceNumberNameMap>
+            <PerforceNumberNameMap />
           </value>
         </entry>
       </map>
@@ -270,7 +263,7 @@
       <workItem from="1686399410566" duration="1305000" />
       <workItem from="1686558629515" duration="14175000" />
       <workItem from="1686639877469" duration="5083000" />
-      <workItem from="1686645921730" duration="133000" />
+      <workItem from="1686645921730" duration="17810000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
@@ -538,7 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686577053555</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Removed Debug messages">
+      <created>1686657401646</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1686657401646</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Removed unused code">
+      <created>1686662433256</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1686662433256</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,8 +555,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Changed name on size from &quot;Big&quot; to &quot;Large&quot;" />
-    <MESSAGE value="Magnet bubble now holds the fishes at the desired location for a supplied time before releasing them" />
     <MESSAGE value="Bubbles speeds up after halftime now" />
     <MESSAGE value="Speed is not linearly faster, Get instantly faster instead" />
     <MESSAGE value="Made PopBubble virtual so it can be overriden by parents" />
@@ -573,7 +578,9 @@
     <MESSAGE value="Magnet bubble is working as intended" />
     <MESSAGE value="Incrementing index before running objective completed" />
     <MESSAGE value="Added constructor to FFish struct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added constructor to FFish struct" />
+    <MESSAGE value="Removed Debug messages" />
+    <MESSAGE value="Removed unused code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

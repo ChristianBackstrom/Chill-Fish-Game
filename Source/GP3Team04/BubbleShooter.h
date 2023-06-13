@@ -137,6 +137,8 @@ protected:
 
 	APlayerCameraManager* CameraManager;
 
+	FVector LastPosition;
+
 public:
 	// Bubbles that can be shot
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Shooting")

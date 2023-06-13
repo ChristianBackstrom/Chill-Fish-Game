@@ -67,10 +67,13 @@ class GP3TEAM04_API UFishingGameInstance : public UGameInstance
 
 public:
 	void CaughtFish(const FFish& Fish);
+
+	virtual void Init() override;
 	
 public:
 	TArray<FFish> CaughtFishies;
 
+	UPROPERTY()
 	TArray<TSubclassOf<ABubble>> UnlockedBubbles = TArray<TSubclassOf<ABubble>>();
 
 	UPROPERTY(BlueprintReadWrite)
