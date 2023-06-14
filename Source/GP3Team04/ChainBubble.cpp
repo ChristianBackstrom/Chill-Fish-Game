@@ -45,7 +45,7 @@ void AChainBubble::TeleportToFish()
 		StartScale = GetActorScale3D();
 		
 		TargetLocation = NearestActor->BubbleMesh->GetComponentLocation();
-		TargetScale = NearestActor->BubbleMesh->GetComponentScale() / 2.f;
+		TargetScale = NearestActor->BubbleMesh->GetComponentScale();
 		NearestActor->bShouldMove = false;
 		
 		Time = World->GetTimeSeconds();
@@ -67,10 +67,10 @@ void AChainBubble::LerpProcess()
 	LerpAlpha = UKismetMathLibrary::Ease(0, 1.f, LerpAlpha, EEasingFunc::EaseInOut);
 
 	FVector LerpedLocation = FMath::Lerp(StartLocation, TargetLocation, LerpAlpha);
-	// FVector LerpedScale = FMath::Lerp(StartScale, TargetScale, LerpAlpha);
+	FVector LerpedScale = FMath::Lerp(StartScale, TargetScale, LerpAlpha);
 	
 	SetActorLocation(LerpedLocation);
-	// SetActorScale3D(LerpedScale);
+	SetActorScale3D(LerpedScale);
 
 	if (LerpAlpha >= 1.0f)
 	{

@@ -52,6 +52,14 @@ void ANarrativeManager::BeginPlay()
 
 void ANarrativeManager::StartDialogue(UDialogue* Dialogue)
 {
+	if (!IsValid(Dialogue))
+	{
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, "Dialogue is a not assigned");
+
+		return;
+	}
+	
 	CurrentLineIndex = -1;
 	CurrentDialogue = Dialogue;
 	

@@ -6,9 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Art/Sprites/check_box_outline_blank_FILL0_wght400_GRAD0_opsz48.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprint/NarrativeManager/BP_NarrativeManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/NarrativeManager/BP_NarrativeManager.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/NarrativeManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/NarrativeManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Art/Sprites/Circleasd.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/WBP_BubbleSlots.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_BubbleSlots.uasset" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <list id="6307ab82-67a9-4854-9a17-af75ab5cc72b" name="MyStuff" comment="MyStuff" />
@@ -263,7 +262,7 @@
       <workItem from="1686558629515" duration="14175000" />
       <workItem from="1686639877469" duration="5083000" />
       <workItem from="1686645921730" duration="17810000" />
-      <workItem from="1686725796666" duration="7205000" />
+      <workItem from="1686725796666" duration="12873000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>

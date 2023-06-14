@@ -5,10 +5,15 @@
 
 bool UDialogue::TryGetDialogueData(int Index, USoundWave*& Sound, FString& Text)
 {
+	if (DialogueDatas.IsEmpty()) return false;
+
+	Sound = nullptr;
+	
 	if (Index < DialogueDatas.Num())
 	{
 		Text = DialogueDatas[Index].Text;
-		Sound = DialogueDatas[Index].SoundCue;
+		if (IsValid(DialogueDatas[Index].SoundCue))
+			Sound = DialogueDatas[Index].SoundCue;
 		return true;
 	}
 
