@@ -284,7 +284,7 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 		ObjectQueryParams.AddObjectTypesToQuery(ECC_GameTraceChannel1);
 	
 		GetWorld()->SweepMultiByObjectType(HitResults, TraceStart, TraceEnd, FQuat::Identity, ObjectQueryParams, CollisionShape);
-
+		
 		if (HitResults.Num() > 0)
 		{
 			AFishActor* NearestFish = Cast<AFishActor>(HitResults[0].GetActor());
@@ -294,7 +294,6 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 				AActor* HitActor = HitResult.GetActor();
 				if (AFishActor* FishActor = Cast<AFishActor>(HitActor))
 				{
-					ChargingBubble->CatchFish(FishActor);
 					float distance = FVector::Distance(HitActor->GetActorLocation(), GetActorLocation());
 					
 					if (distance < Length)

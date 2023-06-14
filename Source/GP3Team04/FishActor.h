@@ -25,6 +25,9 @@ public:
 
 	UFUNCTION()
 	void FishIsCaught();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void FishCaught();
 	
 	UPROPERTY()
 	AFishManager* FishManager;

@@ -81,6 +81,7 @@ void ABubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 void ABubble::CatchFish(AFishActor* FishActor)
 {
 	bShouldMove = false;
+	bShouldCoolide = false;
 		
 	if (UFishingGameInstance* FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(World)))
 	{
@@ -111,7 +112,8 @@ void ABubble::CatchFish(AFishActor* FishActor)
 	FTimerDelegate CatchingDelegate;
 	CatchingDelegate.BindUObject(this, &ABubble::CaptureFish);
 	GetWorldTimerManager().SetTimer(CatchingHandle, CatchingDelegate, 0.001f, true);
-	
+
+	SetActorEnableCollision(false);
 	FishActor->SetActorEnableCollision(false);
 	FishActor->bEnabled = false;
 	FishActor->bShouldMove = false;

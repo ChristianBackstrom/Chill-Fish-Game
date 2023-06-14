@@ -155,4 +155,5 @@ void AFishActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Oth
 void AFishActor::FishIsCaught()
 {
     BubbleMesh->SetVisibility(true);
+    FishCaught();
 }

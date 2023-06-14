@@ -18,12 +18,7 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/AuroraBorealis.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleShooter.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" root0="FORCE_HIGHLIGHTING" />
@@ -264,6 +259,7 @@
       <workItem from="1686558629515" duration="14175000" />
       <workItem from="1686639877469" duration="5083000" />
       <workItem from="1686645921730" duration="17810000" />
+      <workItem from="1686725796666" duration="3960000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>

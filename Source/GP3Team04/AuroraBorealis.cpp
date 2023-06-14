@@ -30,6 +30,8 @@ void AAuroraBorealis::HitMesh(UPrimitiveComponent* HitComponent, AActor* OtherAc
 		const FVector ReflectedVector = FMath::GetReflectionVector(Bubble->GetActorForwardVector(), Hit.Normal);
 		
 		Bubble->SetActorRotation(ReflectedVector.Rotation());
+
+		BubbleBounced(Hit.ImpactPoint);
 	}
 }
 
