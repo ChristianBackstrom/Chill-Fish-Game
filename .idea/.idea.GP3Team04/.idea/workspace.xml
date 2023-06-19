@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ChainBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ChainBubble.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_MagnetBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_MagnetBubble.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GP3Team04/Bubble.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/Bubble.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" afterDir="false" />
@@ -277,7 +278,7 @@
       <workItem from="1686811185469" duration="17017000" />
       <workItem from="1686898805770" duration="11982000" />
       <workItem from="1687075086691" duration="5988000" />
-      <workItem from="1687156477964" duration="19049000" />
+      <workItem from="1687156477964" duration="19379000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>

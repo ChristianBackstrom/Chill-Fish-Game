@@ -81,7 +81,7 @@ void AChainBubble::LerpProcess()
 		
 		Bubble->CatchFish(NearestActor);
 
-		int index = FMath::Clamp(ChainSounds.Num() - 1 - MaxFish, 0, 100000);
+		int index = FMath::Clamp(ChainSounds.Num() - MaxFish, 0, 100000);
 		if (index < ChainSounds.Num())
 		{
 			Bubble->CaughtSoundEffect = ChainSounds[index];
