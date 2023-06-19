@@ -62,6 +62,10 @@ protected:
 
 	UFUNCTION()
 		void StartExpand(AFishActor* FishActor);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void ExpandStarted();
+
 	
 	UFUNCTION()
 		void Expand();
@@ -71,4 +75,8 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 		void Explode();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void Exploded();
+	
 };

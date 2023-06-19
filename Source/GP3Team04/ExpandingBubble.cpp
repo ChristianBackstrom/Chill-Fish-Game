@@ -46,12 +46,14 @@ void AExpandingBubble::StartExpand(AFishActor* FishActor)
 	FishActor->bShouldMove = false;
 	bShouldMove = false;
 	CaughtFish.Add(FishActor);
-	FishCaught(nullptr);
+	FishCaught(FishActor);
 		
 
 		
 	if (!bExpandStarted)
 	{
+		ExpandStarted();
+		
 		Time = UGameplayStatics::GetTimeSeconds(World);
 		bExpandStarted = true;
 		BaseScale = GetActorScale3D();
@@ -135,6 +137,7 @@ void AExpandingBubble::Explode()
 			Bubble->bShouldCoolide = true;
 		}
 	}
+	Exploded();
 }
 
 
