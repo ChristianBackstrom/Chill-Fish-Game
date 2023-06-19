@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
 #include "Bubble.h"
 #include "InputActionValue.h"
 #include "InputMappingContext.h"
@@ -59,6 +58,9 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void AddedUpgradedBubble(TSubclassOf<ABubble> Bubble);
+
+	UFUNCTION(BlueprintCallable)
+		void ChangeBubble(int32 Index);
 	
 private:
 	void Charge(const FInputActionValue& ActionValue, bool bStandardBubble);
@@ -68,8 +70,6 @@ private:
 	UFUNCTION()
 	void Charging();
 
-	void ChangeBubble(int32 Index);
-
 	void ChangeBubble();
 
 	int GetWhatNumberWasPressed();
@@ -77,6 +77,10 @@ private:
 	void Scroll(const FInputActionValue& ActionValue);
 
 protected:
+
+	UPROPERTY(BlueprintReadWrite)
+		AActor* BoatActor;
+	
 	UPROPERTY(BlueprintReadWrite)
 		bool bIsAimingDown = false;
 
@@ -97,9 +101,6 @@ protected:
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* StaticMeshComponent;
 	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Shooting")
-		bool bUseRaycastSystem;
-		
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Shooting")
 		float LifeTime;	
 
@@ -127,16 +128,15 @@ protected:
 
 	bool bIsDefaultCharging = false;
 	bool bIsUpgradedCharging = false;
-
-	float StartTime;
 	
 	UPROPERTY(EditAnywhere, Category="Shooting")
 		bool bExplodeProject;
-
+	
 	float fTimeOfCharge;
 
 	APlayerCameraManager* CameraManager;
 
+	FVector Velocity;
 	FVector LastPosition;
 
 public:

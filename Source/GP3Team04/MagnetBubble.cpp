@@ -42,7 +42,6 @@ void AMagnetBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* 
 
 	Time = UGameplayStatics::GetTimeSeconds(World);
 
-	FTimerHandle TimerHandle;
 	FTimerDelegate Delegate;
 	Delegate.BindUObject(this, &AMagnetBubble::PullFish);
 	
@@ -55,14 +54,13 @@ void AMagnetBubble::PullFish()
 	
 	if (TotalTime >= 1.f)
 	{
-		GetWorldTimerManager().ClearAllTimersForObject(this);
+		GetWorldTimerManager().ClearTimer(TimerHandle);
 		
-		Time = UGameplayStatics::GetTimeSeconds(World);
-		FTimerHandle TimerHandle;
+		TimerHandle = FTimerHandle();
 		FTimerDelegate Delegate;
 		Delegate.BindUObject(this, &AMagnetBubble::ReleaseFish);
 
-		GetWorldTimerManager().SetTimer(TimerHandle, Delegate, .001f, false, 1.f);
+		GetWorldTimerManager().SetTimer(TimerHandle, Delegate, .001f, false, HoldTime);
 		
 		return;
 	}
@@ -78,17 +76,13 @@ void AMagnetBubble::PullFish()
 
 void AMagnetBubble::ReleaseFish()
 {
-	float TotalTime = (UGameplayStatics::GetTimeSeconds(World) - Time) / HoldTime;
-
-	if (TotalTime >= 1.f)
+	for (AFishActor* Fish : FishToPull)
 	{
-		for (AFishActor* Fish : FishToPull)
-		{
-			Fish->bEnabled = true;
-			Fish->SetActorEnableCollision(true);
-		}
-		PopBubble();
+		Fish->bEnabled = true;
+		Fish->SetActorEnableCollision(true);
 	}
+
+	PopBubble();
 }
 
 

@@ -48,6 +48,9 @@ private:
 
 
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		FString BubbleName = "Bubble";
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float CaptureSpeed = 0.2f;
 	
@@ -91,8 +94,8 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 		bool bIgnoreSize = false;
 
-	// AFishActor* FishActor;
-
+	FVector IntertialVelocity;
+	
 	float Timer;
 	
 	FOnBubblePop OnBubblePop;
@@ -112,4 +115,6 @@ protected:
 	FVector TargetScale;
 
 	UWorld* World;
+
+	FTimerHandle CatchingHandle;
 };

@@ -9,7 +9,7 @@
 ANarrativeManager::ANarrativeManager()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 // Called when the game starts or when spawned
@@ -59,9 +59,11 @@ void ANarrativeManager::StartDialogue(UDialogue* Dialogue)
 
 		return;
 	}
-	
+
+	GetWorldTimerManager().ClearAllTimersForObject(this);
 	CurrentLineIndex = -1;
 	CurrentDialogue = Dialogue;
+	bIsDialogueActive = true;
 	
 	DialogueStarted();
 	NextLine();
@@ -74,6 +76,8 @@ void ANarrativeManager::NextLine()
 	FString Text;
 	USoundWave* Sound;
 
+	TextUpdated("");
+
 	if (CurrentDialogue->TryGetDialogueData(CurrentLineIndex, Sound, Text))
 	{
 		TypedAmount = Text.Len();
@@ -81,17 +85,15 @@ void ANarrativeManager::NextLine()
 		CurrentSound = Sound;
 
 		StartedNextLine();
-
-		bIsTyping = true;
 		
 		FTimerHandle TimerHandle;
 		FTimerDelegate Delegate;
 		Delegate.BindUObject(this, &ANarrativeManager::UpdateText);
-		GetWorldTimerManager().SetTimer(TimerHandle, Delegate, TypeOutSpeed, true, 0);
+		GetWorldTimerManager().SetTimer(TimerHandle, Delegate, TypeOutSpeed, true, TypeOutSpeed);
 
 		return;
 	}
-
+	bIsDialogueActive = false;
 	EndDialogue();
 }
 
@@ -99,11 +101,6 @@ void ANarrativeManager::UpdateText()
 {
 	TypedAmount--;
 	TypedAmount = FMath::Clamp(TypedAmount, 0, 1000000);
-	
-	if (bSkipLine && bIsTyping)
-	{
-		bFinishedTyping = true;
-	}
 
 	const FString& SubString = bFinishedTyping ? CurrentText : CurrentText.LeftChop(TypedAmount);
 
@@ -112,22 +109,40 @@ void ANarrativeManager::UpdateText()
 	if (TypedAmount <= 0)
 	{
 		bFinishedTyping = true;
-		bIsTyping = false;
+
+		if (!TimerStarted && !bIsSoundPlaying)
+		{
+			TimerStarted = true;
+
+			Time = World->TimeSeconds;
+			FTimerHandle TimerHandle;
+			FTimerDelegate Delegate;
+			Delegate.BindUObject(this, &ANarrativeManager::DelayAfterLineDone);
+			GetWorldTimerManager().SetTimer(TimerHandle, Delegate, 0.1f, true);
+		}
 	}
 }
 
 void ANarrativeManager::SkipLine(const FInputActionValue& ActionValue)
 {
-	bSkipLine = true;
 	TypedAmount = 0;
 
 	if (bFinishedTyping)
 	{
 		GetWorldTimerManager().ClearAllTimersForObject(this);
 		bFinishedTyping = false;
-		bSkipLine = false;
-		bIsTyping = false;
+		TimerStarted = false;
 		EndLine();
 		NextLine();
+	}
+}
+
+void ANarrativeManager::DelayAfterLineDone()
+{
+	float TimeSinceStart = World->TimeSeconds - Time;
+
+	if (TimeSinceStart >= TimeDelayAfterLine)
+	{
+		SkipLine(FInputActionValue());
 	}
 }

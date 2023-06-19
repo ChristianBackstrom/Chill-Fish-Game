@@ -20,16 +20,20 @@ protected:
 	virtual void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
 
 private:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category="Config", meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
+		float ExplodingMaxSize = .5f;
+
+
+#pragma region Expanding
+	UPROPERTY(EditAnywhere, Category="Expanding")
 		float ExpandRadiusMultiply = 3.f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category="Expanding")
 		float ExpandTime = 1.f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category="Expanding")
 		int MaxFish = 10;
 
-	float Time;
 
 	int FishiesCaught = 0;
 
@@ -39,9 +43,32 @@ private:
 
 	TArray<AFishActor*> CaughtFish;
 
+#pragma endregion These are the variables used for the expanding bubble
+
+#pragma region Exploding
+	UPROPERTY(EditAnywhere, Category="Exploding")
+		TSubclassOf<ABubble> BubbleToSpawn;
+	
+	UPROPERTY(EditAnywhere, Category="Exploding")
+		int MaxAmount = 10;
+
+	UPROPERTY(EditAnywhere, Category="Exploding")
+		int MinAmount = 5;
+#pragma endregion These are the variables used for the exploding bubble
+	
+	float Time;
+
+protected:
+
+	UFUNCTION()
+		void StartExpand(AFishActor* FishActor);
+	
 	UFUNCTION()
 		void Expand();
 
 	UFUNCTION()
 		void ExpandEnded();
+
+	UFUNCTION(BlueprintCallable)
+		void Explode();
 };

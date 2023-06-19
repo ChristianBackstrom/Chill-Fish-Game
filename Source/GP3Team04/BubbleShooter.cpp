@@ -3,7 +3,6 @@
 #include "BubbleShooter.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "GameHud.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -15,6 +14,7 @@ ABubbleShooter::ABubbleShooter()
 	PrimaryActorTick.bCanEverTick = true;
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Static Mesh");
+	SetRootComponent(StaticMeshComponent);
 }
 
 
@@ -129,6 +129,13 @@ void ABubbleShooter::Tick(float DeltaTime)
 		if (Timers[i] <= 0) continue;
 		Timers[i] -= DeltaTime;
 	}
+
+	if (IsValid(BoatActor))
+	{
+		FVector Location =  BoatActor->GetActorLocation();
+		Velocity = LastPosition - Location;
+		LastPosition = Location;
+	}
 }
 
 
@@ -163,6 +170,7 @@ void ABubbleShooter::Charge(const FInputActionValue& ActionValue, bool bStandard
 
 	bIsDefaultCharging = bStandardBubble;
 	bIsUpgradedCharging = !bStandardBubble;
+
 
 
 	FRotator CameraRotation = CameraManager->GetCameraRotation();
@@ -219,8 +227,6 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 
 	if (!bStandardBubble && !bIsUpgradedCharging) return;
 
-	if (ChargingBubble->bUseCooldown && StartTime > 0.f) return;
-
 	GetWorldTimerManager().ClearAllTimersForObject(this);
 
 	bIsDefaultCharging = false;
@@ -240,24 +246,6 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 
 	float Size = FMath::Clamp((UGameplayStatics::GetTimeSeconds(GetWorld()) - fTimeOfCharge) / ChargeTime, 0, 1);
 
-	if (bUseRaycastSystem)
-	{
-		FHitResult Hit;
-		FVector Start = CameraManager->GetCameraLocation();
-		FVector End = Start + CameraManager->GetActorForwardVector() * (BubbleBaseSpeed * BubbleMaxSpeedDecrease / Size
-			* LifeTime);
-
-		GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility);
-
-		End = Hit.bBlockingHit ? Hit.ImpactPoint : Hit.TraceEnd;
-
-		GetWorld()->LineTraceSingleByChannel(Hit, ChargingBubble->GetActorLocation(), End, ECC_Camera);
-
-		End = Hit.bBlockingHit ? Hit.ImpactPoint : Hit.TraceEnd;
-
-		ChargingBubble->SetActorRotation((End - ChargingBubble->GetActorLocation()).Rotation());
-	}
-
 	if (IsValid(ChargingBubble))
 	{
 		ChargingBubble->bShouldMove = true;
@@ -265,15 +253,21 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 		ChargingBubble->Speed = BubbleBaseSpeed * BubbleMaxSpeedDecrease / Size;
 		ChargingBubble->baseSpeed = ChargingBubble->Speed;
 		ChargingBubble->bShouldCoolide = true;
+		Velocity = -Velocity;
+		ChargingBubble->IntertialVelocity = Velocity;
 
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1 , 10.f, FColor::White, Velocity.ToString());
+
+		// Detach from bubble shooter
 		FDetachmentTransformRules DetachmentTransformRules =
 			FDetachmentTransformRules(EDetachmentRule::KeepWorld, true);
 		ChargingBubble->DetachFromActor(DetachmentTransformRules);
 
-		Fired(); //Tytus added this
+		Fired();
 		if (ChargingBubble->bUseCooldown)
 			Timers[CurrentIndex] = Cooldowns[CurrentIndex];
-
+		
 		TArray<FHitResult> HitResults;
 		FVector TraceStart = ChargingBubble->GetActorLocation();
 		FVector TraceEnd = TraceStart + FVector::UpVector * Size * 100.f;

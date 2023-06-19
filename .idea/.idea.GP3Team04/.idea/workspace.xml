@@ -6,7 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Art/Sprites/Circleasd.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_BubbleShooter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/UI/WBP_BubbleSlots.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WBP_BubbleSlots.uasset" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
@@ -48,6 +48,8 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/MainObjective.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Movement.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Movement.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/NarrativeManager.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/NarrativeManager.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/NarrativeManager.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/NarrativeManager.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -262,7 +264,11 @@
       <workItem from="1686558629515" duration="14175000" />
       <workItem from="1686639877469" duration="5083000" />
       <workItem from="1686645921730" duration="17810000" />
-      <workItem from="1686725796666" duration="12873000" />
+      <workItem from="1686725796666" duration="17665000" />
+      <workItem from="1686811185469" duration="17017000" />
+      <workItem from="1686898805770" duration="11982000" />
+      <workItem from="1687075086691" duration="5988000" />
+      <workItem from="1687156477964" duration="4361000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
@@ -544,7 +550,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686662433256</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fixed issue of upgraded bubbles not shooting">
+      <created>1686829428066</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1686829428066</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fixed bugs with bubbles">
+      <created>1686917324720</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1686917324720</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Increasing speed should be fixed">
+      <created>1687157801661</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1687157801661</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,9 +581,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Bubbles speeds up after halftime now" />
-    <MESSAGE value="Speed is not linearly faster, Get instantly faster instead" />
-    <MESSAGE value="Made PopBubble virtual so it can be overriden by parents" />
     <MESSAGE value="Fishtype enum itroduced :)" />
     <MESSAGE value="Added Fishtype to Fish struct" />
     <MESSAGE value="Removed debug logs" />
@@ -579,7 +603,10 @@
     <MESSAGE value="Added constructor to FFish struct" />
     <MESSAGE value="Removed Debug messages" />
     <MESSAGE value="Removed unused code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unused code" />
+    <MESSAGE value="Fixed issue of upgraded bubbles not shooting" />
+    <MESSAGE value="Fixed bugs with bubbles" />
+    <MESSAGE value="Increasing speed should be fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increasing speed should be fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

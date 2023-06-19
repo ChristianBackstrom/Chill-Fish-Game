@@ -36,7 +36,7 @@ void ABubble::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	if (!bShouldMove) return;
 	
-	SetActorLocation(GetActorLocation() + GetActorForwardVector() * DeltaTime * Speed, true);
+	SetActorLocation(GetActorLocation() + IntertialVelocity + GetActorForwardVector() * DeltaTime * Speed, true);
 	LifeTime -= DeltaTime;
 
 	if (MaxLifeTime / 2.f >= LifeTime)
@@ -61,10 +61,7 @@ void ABubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 	
 	if (AFishActor* FishActor = Cast<AFishActor>(OtherActor))
 	{
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::White, "Hit Fish");
-
-		if (!FishActor->bShouldMove)
+		if (!FishActor->bShouldMove || !FishActor->bEnabled)
 		{
 			PopBubble();
 			return;
@@ -108,7 +105,6 @@ void ABubble::CatchFish(AFishActor* FishActor)
 	TargetLocation = FishActor->BubbleMesh->GetComponentLocation();
 	TargetScale = FishActor->BubbleMesh->GetComponentScale();
 		
-	FTimerHandle CatchingHandle;
 	FTimerDelegate CatchingDelegate;
 	CatchingDelegate.BindUObject(this, &ABubble::CaptureFish);
 	GetWorldTimerManager().SetTimer(CatchingHandle, CatchingDelegate, 0.001f, true);
@@ -156,7 +152,7 @@ void ABubble::CaptureFish()
 
 	if (TotalTime >= 1.f)
 	{
-		GetWorldTimerManager().ClearAllTimersForObject(this);
+		GetWorldTimerManager().ClearTimer(CatchingHandle);
 		
 		//Timer for Pop handlign
 		FTimerHandle TimerHandle;

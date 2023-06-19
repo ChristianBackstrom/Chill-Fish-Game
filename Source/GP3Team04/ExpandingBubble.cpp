@@ -22,34 +22,44 @@ void AExpandingBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActo
 	
 	if (AFishActor* FishActor = Cast<AFishActor>(OtherActor))
 	{
-		FishiesCaught++;
-		if (FishiesCaught >= MaxFish)
+		if (Size > ExplodingMaxSize)
 		{
-			GetWorldTimerManager().ClearAllTimersForObject(this);
-			ExpandEnded();
-		}
-		FishActor->bShouldMove = false;
-		bShouldMove = false;
-		CaughtFish.Add(FishActor);
-		FishCaught(nullptr);
-		
-
-		
-		if (!bExpandStarted)
-		{
-			Time = UGameplayStatics::GetTimeSeconds(World);
-			bExpandStarted = true;
-			BaseScale = GetActorScale3D();
-			FTimerHandle TimerHandle;
-			FTimerDelegate Delegate;
-			Delegate.BindUObject(this, &AExpandingBubble::Expand);
-			GetWorldTimerManager().SetTimer(TimerHandle, Delegate, 0.001f, true);
+			StartExpand(FishActor);
+			return;
 		}
 
+		CatchFish(FishActor);
 		return;
 	}
-
+	
 	ExpandEnded();
+}
+
+void AExpandingBubble::StartExpand(AFishActor* FishActor)
+{
+	FishiesCaught++;
+	if (FishiesCaught >= MaxFish)
+	{
+		GetWorldTimerManager().ClearAllTimersForObject(this);
+		ExpandEnded();
+	}
+	FishActor->bShouldMove = false;
+	bShouldMove = false;
+	CaughtFish.Add(FishActor);
+	FishCaught(nullptr);
+		
+
+		
+	if (!bExpandStarted)
+	{
+		Time = UGameplayStatics::GetTimeSeconds(World);
+		bExpandStarted = true;
+		BaseScale = GetActorScale3D();
+		FTimerHandle TimerHandle;
+		FTimerDelegate Delegate;
+		Delegate.BindUObject(this, &AExpandingBubble::Expand);
+		GetWorldTimerManager().SetTimer(TimerHandle, Delegate, 0.001f, true);
+	}
 }
 
 void AExpandingBubble::Expand()
@@ -89,6 +99,42 @@ void AExpandingBubble::ExpandEnded()
 	}
 		
 	PopBubble();
+}
+
+void AExpandingBubble::Explode()
+{
+	if (Size > ExplodingMaxSize) return;
+	
+	int Amount = FMath::RandRange(MinAmount, MaxAmount);
+
+	FTransform Transform;
+	Transform.SetLocation(GetActorLocation());
+	Transform.SetScale3D(GetActorScale3D());
+	for (int i = 0; i < Amount; ++i)
+	{
+		FVector Direction = FMath::VRand();
+
+		Transform.SetRotation(Direction.Rotation().Quaternion());
+
+		if (!IsValid(BubbleToSpawn))
+		{
+			if (GEngine)
+				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, "Bubble to spawn is not set so no bubbles will be spawned");
+			return;
+		}
+			
+		ABubble* Bubble = World->SpawnActor<ABubble>(BubbleToSpawn, Transform);
+		if (IsValid(Bubble))
+		{
+			Bubble->Size = Size;
+			Bubble->baseSpeed = baseSpeed;
+			Bubble->Speed = baseSpeed;
+			Bubble->MaxLifeTime = MaxLifeTime;
+			Bubble->LifeTime = MaxLifeTime;
+			Bubble->bShouldMove = true;
+			Bubble->bShouldCoolide = true;
+		}
+	}
 }
 
 

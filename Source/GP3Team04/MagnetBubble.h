@@ -40,7 +40,7 @@ private:
 	UPROPERTY(EditAnywhere)
 		float HoldTime = 1.f;
 
-	
+	FTimerHandle TimerHandle;
 	
 
 	TArray<AFishActor*> FishToPull;

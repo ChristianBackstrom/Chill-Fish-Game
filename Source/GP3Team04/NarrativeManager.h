@@ -24,6 +24,11 @@ public:
 	// Sets default values for this actor's properties
 	ANarrativeManager();
 
+	UPROPERTY(BlueprintReadWrite)
+	bool bIsSoundPlaying = false;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsDialogueActive;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -34,23 +39,30 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	USoundWave* CurrentSound;
-	
+
+
 	int CurrentLineIndex;
 
 	UDialogue* CurrentDialogue;
+	
 
 private:
+	UPROPERTY(EditAnywhere)
+		float TimeDelayAfterLine = 3.f;
+	
 	UWorld* World;
 
 	FString CurrentText;
 	
-	int TypedAmount;
+	int TypedAmount = 100;
 
-	bool bSkipLine = false;
-
+	
 	bool bFinishedTyping = false;
 
 	bool bIsTyping = false;
+
+	float Time;
+	bool TimerStarted = false;
 
 protected:
 	UFUNCTION(BlueprintCallable)
@@ -79,4 +91,7 @@ protected:
 
 	UFUNCTION()
 		void SkipLine(const FInputActionValue& ActionValue);
+
+	UFUNCTION()
+		void DelayAfterLineDone();
 };

@@ -20,9 +20,10 @@ ABubbleUpgradeHandler::ABubbleUpgradeHandler()
 void ABubbleUpgradeHandler::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
+	CurrentIndex = 0;
 	if (Objectives.Num() > 0)
-		CurrentObjective = Objectives[0];
+		CurrentObjective = Objectives[CurrentIndex];
 	
 	FishingGameMode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld()));
 	FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
@@ -45,18 +46,6 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 	CurrentObjective.FishCaught(Fish);
 
 	UpdateObjective();
-	
-	if (GEngine)
-    	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, "BRUH");
-
-
-	for (auto FishAmount : CurrentObjective.FishToCatch)
-	{
-		FString Amount = "Fishes Needed ";
-		Amount.Append(FString::SanitizeFloat(FishAmount.NeededAmount));
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1,10.f, FColor::Green, Amount);
-	}
 	
 	if (CurrentObjective.Completed())
 	{

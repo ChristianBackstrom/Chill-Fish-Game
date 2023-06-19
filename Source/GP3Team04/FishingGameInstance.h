@@ -73,7 +73,7 @@ public:
 public:
 	TArray<FFish> CaughtFishies;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	TArray<TSubclassOf<ABubble>> UnlockedBubbles = TArray<TSubclassOf<ABubble>>();
 
 	UPROPERTY(BlueprintReadWrite)

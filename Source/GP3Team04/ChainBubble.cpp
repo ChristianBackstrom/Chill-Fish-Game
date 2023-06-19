@@ -29,7 +29,7 @@ void AChainBubble::TeleportToFish()
 
 			if (FishActorsCaught.Contains(FishActor)) continue;
 
-			if (distance < Length)
+			if (distance < Length && FishActor->bEnabled)
 			{
 				Length = distance;
 				NearestActor = FishActor;
@@ -75,8 +75,10 @@ void AChainBubble::LerpProcess()
 	if (LerpAlpha >= 1.0f)
 	{
 		ABubble* Bubble = World->SpawnActor<ABubble>(DefaultBubble, NearestActor->BubbleMesh->GetComponentLocation(), NearestActor->BubbleMesh->GetComponentRotation());
+		Bubble->CaptureSpeed = 0.0000001f;
 		Bubble->SetActorScale3D(GetActorScale3D());
 		Bubble->bIgnoreSize = true;
+		
 		Bubble->CatchFish(NearestActor);
 		
 		GetWorldTimerManager().ClearAllTimersForObject(this);
