@@ -24,7 +24,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()
-	void FishIsCaught();
+	void FishIsCaught(ABubble* Bubble);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void FishCaught();

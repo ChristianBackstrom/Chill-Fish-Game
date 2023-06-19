@@ -84,7 +84,7 @@ void AChainBubble::LerpProcess()
 		int index = FMath::Clamp(ChainSounds.Num() - 1 - MaxFish, 0, 100000);
 		if (index < ChainSounds.Num())
 		{
-			Bubble->PopSoundEffect = ChainSounds[index];
+			Bubble->CaughtSoundEffect = ChainSounds[index];
 		}
 		
 		GetWorldTimerManager().ClearAllTimersForObject(this);

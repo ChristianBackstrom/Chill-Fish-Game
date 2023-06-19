@@ -23,10 +23,10 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void FishCaught(AFishActor* FishActor);
+		void FishCaught(AFishActor* FishActor, USoundWave* SoundWave);
 	
 	UFUNCTION(BlueprintImplementableEvent)
-		void POP(USoundWave* PopSound);
+		void POP();
 
 	virtual void PopBubble();
 	
@@ -47,7 +47,7 @@ private:
 
 
 public:
-	USoundWave* PopSoundEffect;
+	USoundWave* CaughtSoundEffect;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString BubbleName = "Bubble";

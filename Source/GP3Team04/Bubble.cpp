@@ -120,7 +120,7 @@ void ABubble::PopBubble()
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green, "POPS");
 	GetWorldTimerManager().ClearAllTimersForObject(this);
-	POP(PopSoundEffect);
+	POP();
 	OnBubblePop.Broadcast();
 	this->Destroy();
 }
@@ -166,8 +166,8 @@ void ABubble::CaptureFish()
 		FloatDelegate.BindUObject(this, &ABubble::FloatBubble, CaughtFish);
 		GetWorldTimerManager().SetTimer(FloatHandle, FloatDelegate, 0.0001f, true);
 
-		FishCaught(CaughtFish);
-		CaughtFish->FishIsCaught();
+		FishCaught(CaughtFish, CaughtSoundEffect);
+		CaughtFish->FishIsCaught(this);
 		StaticMeshComponent->SetVisibility(false);
 	}
 }

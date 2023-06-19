@@ -38,7 +38,7 @@ void AMagnetBubble::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* 
 		}
 	}
 	
-	FishCaught(nullptr);
+	FishCaught(nullptr,nullptr);
 
 	Time = UGameplayStatics::GetTimeSeconds(World);
 

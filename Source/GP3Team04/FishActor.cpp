@@ -1,4 +1,6 @@
 #include "FishActor.h"
+
+#include "Bubble.h"
 #include "FishManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/SphereComponent.h"
@@ -152,8 +154,10 @@ void AFishActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Oth
     AvoidCollision();
 }
 
-void AFishActor::FishIsCaught()
+void AFishActor::FishIsCaught(ABubble* Bubble)
 {
     BubbleMesh->SetVisibility(true);
+    UMaterialInterface* MaterialInterface = Bubble->StaticMeshComponent->GetMaterial(0);
+    BubbleMesh->SetMaterial(0, MaterialInterface);
     FishCaught();
 }

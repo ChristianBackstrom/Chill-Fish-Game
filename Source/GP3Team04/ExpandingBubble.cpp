@@ -46,7 +46,7 @@ void AExpandingBubble::StartExpand(AFishActor* FishActor)
 	FishActor->bShouldMove = false;
 	bShouldMove = false;
 	CaughtFish.Add(FishActor);
-	FishCaught(FishActor);
+	FishCaught(FishActor,nullptr);
 		
 
 		
