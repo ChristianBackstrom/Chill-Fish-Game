@@ -85,7 +85,7 @@ protected:
 		bool bIsAimingDown = false;
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void StartCharging();
+		void StartCharging(bool bIsDefaultBubble);
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void StopCharging();

@@ -207,7 +207,7 @@ void ABubbleShooter::Charge(const FInputActionValue& ActionValue, bool bStandard
 	fTimeOfCharge = UGameplayStatics::GetTimeSeconds(GetWorld());
 	GetWorldTimerManager().SetTimer(TimerHandle, TimerDelegate, .0001f, true);
 
-	StartCharging();
+	StartCharging(bIsDefaultCharging);
 }
 
 

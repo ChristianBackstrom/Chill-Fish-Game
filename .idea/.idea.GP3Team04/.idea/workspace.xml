@@ -6,7 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/ExpandingBubble.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/BubbleMechanics/BP_BubbleUpgradeHandler.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/BubbleMechanics/BP_BubbleUpgradeHandler.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Player/BP_Movement.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Player/BP_Movement.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <list id="6307ab82-67a9-4854-9a17-af75ab5cc72b" name="MyStuff" comment="MyStuff" />
@@ -270,7 +272,7 @@
       <workItem from="1686811185469" duration="17017000" />
       <workItem from="1686898805770" duration="11982000" />
       <workItem from="1687075086691" duration="5988000" />
-      <workItem from="1687156477964" duration="9431000" />
+      <workItem from="1687156477964" duration="13894000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>

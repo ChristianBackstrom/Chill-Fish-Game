@@ -49,7 +49,10 @@ private:
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		FString BubbleName = "Bubble";
+	FString BubbleName = "Bubble";
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString BubbleDescription = "It's a bubble";
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float CaptureSpeed = 0.2f;
