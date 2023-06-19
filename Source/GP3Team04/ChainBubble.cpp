@@ -80,6 +80,7 @@ void AChainBubble::LerpProcess()
 		Bubble->bIgnoreSize = true;
 		
 		Bubble->CatchFish(NearestActor);
+		Bubble->PopSoundEffect = ChainSounds[FMath::Clamp(ChainSounds.Num() - 1 - MaxFish, 0, 100000)];
 		
 		GetWorldTimerManager().ClearAllTimersForObject(this);
 		LerpProcessCompleted();

@@ -26,8 +26,7 @@ protected:
 		void FishCaught(AFishActor* FishActor);
 	
 	UFUNCTION(BlueprintImplementableEvent)
-		void POP();
-
+		void POP(USoundWave* PopSound);
 
 	virtual void PopBubble();
 	
@@ -48,6 +47,8 @@ private:
 
 
 public:
+	USoundWave* PopSoundEffect;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString BubbleName = "Bubble";
 	

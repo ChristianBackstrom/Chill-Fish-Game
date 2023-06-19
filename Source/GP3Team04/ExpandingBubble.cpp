@@ -47,8 +47,9 @@ void AExpandingBubble::StartExpand(AFishActor* FishActor)
 	bShouldMove = false;
 	CaughtFish.Add(FishActor);
 	FishCaught(FishActor);
+		
 
-	
+		
 	if (!bExpandStarted)
 	{
 		ExpandStarted();
@@ -128,6 +129,7 @@ void AExpandingBubble::Explode()
 		if (IsValid(Bubble))
 		{
 			Exploded();
+
 			Bubble->Size = Size;
 			Bubble->baseSpeed = baseSpeed;
 			Bubble->Speed = baseSpeed;

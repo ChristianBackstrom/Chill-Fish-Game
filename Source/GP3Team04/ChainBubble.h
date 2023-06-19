@@ -16,6 +16,9 @@ class GP3TEAM04_API AChainBubble : public ABubble
 	
 protected:
 	UPROPERTY(EditAnywhere)
+		TArray<USoundWave*> ChainSounds;
+	
+	UPROPERTY(EditAnywhere)
 	float LerpDuration;
 
 	UPROPERTY(EditAnywhere)

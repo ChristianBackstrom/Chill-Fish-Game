@@ -120,7 +120,7 @@ void ABubble::PopBubble()
 	if (GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green, "POPS");
 	GetWorldTimerManager().ClearAllTimersForObject(this);
-	POP();
+	POP(PopSoundEffect);
 	OnBubblePop.Broadcast();
 	this->Destroy();
 }
