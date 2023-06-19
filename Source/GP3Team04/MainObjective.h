@@ -23,10 +23,10 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 		void ScoreReached();
 
-private:
-	UPROPERTY(EditAnywhere, Category = "Config")
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Config")
 	float ScoreToReach;
-
+	
 	UPROPERTY(EditAnywhere, Category = "Config")
 	const TSoftObjectPtr<UWorld> LevelToOpen;
 

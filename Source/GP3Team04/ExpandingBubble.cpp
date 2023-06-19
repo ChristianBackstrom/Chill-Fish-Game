@@ -47,9 +47,8 @@ void AExpandingBubble::StartExpand(AFishActor* FishActor)
 	bShouldMove = false;
 	CaughtFish.Add(FishActor);
 	FishCaught(FishActor);
-		
 
-		
+	
 	if (!bExpandStarted)
 	{
 		ExpandStarted();
@@ -128,6 +127,7 @@ void AExpandingBubble::Explode()
 		ABubble* Bubble = World->SpawnActor<ABubble>(BubbleToSpawn, Transform);
 		if (IsValid(Bubble))
 		{
+			Exploded();
 			Bubble->Size = Size;
 			Bubble->baseSpeed = baseSpeed;
 			Bubble->Speed = baseSpeed;
@@ -137,7 +137,6 @@ void AExpandingBubble::Explode()
 			Bubble->bShouldCoolide = true;
 		}
 	}
-	Exploded();
 }
 
 
