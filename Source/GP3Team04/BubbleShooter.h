@@ -95,6 +95,8 @@ protected:
 	
 
 	ABubble* ChargingBubble;
+
+	TSubclassOf<ABubble> ChargingBubbleType;
 	UPROPERTY(BlueprintReadWrite)
 	TSubclassOf<ABubble> SelectedBubble;
 	

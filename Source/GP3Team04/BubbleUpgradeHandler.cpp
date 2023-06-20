@@ -50,14 +50,16 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 	if (CurrentObjective.Completed())
 	{
 		TArray<TSubclassOf<ABubble>> Bubbles = CurrentObjective.AvailableBubbles;
-
+		TArray<TSubclassOf<ABubble>> ValidBubbles = Bubbles;
 		for (TSubclassOf<ABubble> Bubble : Bubbles)
 		{
 			if (BubbleShooter->UpgradedBubbles.Contains(Bubble))
 			{
-				Bubbles.Remove(Bubble);
+				ValidBubbles.Remove(Bubble);
 			}
 		}
+
+		Bubbles = ValidBubbles;
 		
 		CurrentIndex++;
 		if (Bubbles.Num() > 0)

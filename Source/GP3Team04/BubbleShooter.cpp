@@ -192,6 +192,7 @@ void ABubbleShooter::Charge(const FInputActionValue& ActionValue, bool bStandard
 	ChargingBubble = GetWorld()->SpawnActor<ABubble>(Bubble, Transform);
 	if (IsValid(ChargingBubble))
 	{
+		ChargingBubbleType = Bubble;
 		ChargingBubble->SetActorScale3D(FVector::Zero());
 		ChargingBubble->bShouldMove = false;
 		ChargingBubble->MaxLifeTime = LifeTime;
@@ -266,7 +267,12 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 
 		Fired();
 		if (ChargingBubble->bUseCooldown)
-			Timers[CurrentIndex] = Cooldowns[CurrentIndex];
+		{
+			int Index = UpgradedBubbles.Find(ChargingBubbleType);
+
+			if (Index >= 0)
+				Timers[Index] = Cooldowns[Index];
+		}
 		
 		TArray<FHitResult> HitResults;
 		FVector TraceStart = ChargingBubble->GetActorLocation();
