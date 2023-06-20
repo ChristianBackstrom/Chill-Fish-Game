@@ -69,9 +69,12 @@ void AFishManager::EnableFishManager()
 
     for (AFishActor* Fish : FishList)
     {
-        Fish->SetActorEnableCollision(true);
-        Fish->SetActorHiddenInGame(false);
-        Fish->bEnabled = true;
+        if(IsValid(Fish))
+        {
+            Fish->SetActorEnableCollision(true);
+            Fish->SetActorHiddenInGame(false);
+            Fish->bEnabled = true;
+        }
     }
 }
 

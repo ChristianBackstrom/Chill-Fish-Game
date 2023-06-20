@@ -87,8 +87,12 @@ void AMovement::Move(const FInputActionValue& ActionValue)
 {
 	// ActionValue.Get<FVector2d>().ToString()
 	FVector2d Input = ActionValue.Get<FVector2d>();
-	FVector forward = bIsClimbing ? FVector::UpVector * Input.Y + GetActorForwardVector() * Input.Y : GetActorForwardVector() * Input.Y;
+	
 	FVector right = GetActorRightVector() * Input.X;
+	
+	FVector forward = bIsClimbing ? FVector::UpVector * Input.Y + GetActorForwardVector() * Input.Y - right : GetActorForwardVector() * Input.Y;
+	
+	
 	
 	AddMovementInput(forward + right);
 }

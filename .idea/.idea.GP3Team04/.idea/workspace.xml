@@ -6,7 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07163fbe-d04f-4f14-8dc0-7e5af929dc73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprint/Weapon/BP_ExpandingBubble.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/SFX/S_ExpandingBubble.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/SFX/S_ExpandingBubble.uasset" afterDir="false" />
     </list>
     <list id="28a988b0-d582-443b-bbe5-567acdb3cd6f" name="Magnet Bubble still WIP" comment="Magnet Bubble still WIP" />
     <list id="6307ab82-67a9-4854-9a17-af75ab5cc72b" name="MyStuff" comment="MyStuff" />
@@ -22,7 +23,9 @@
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/Bubble.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleShooter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/christian.backstrom/Perforce/Christian.Backstrom-GP3/FG22FTNrth_GP3_Team04/GP3Team04/Source/GP3Team04/BubbleUpgradeHandler.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/BubbleUpgradeHandler.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/GP3Team04/ChainBubble.h" root0="FORCE_HIGHLIGHTING" />
@@ -266,7 +269,7 @@
       <workItem from="1686898805770" duration="11982000" />
       <workItem from="1687075086691" duration="5988000" />
       <workItem from="1687156477964" duration="20963000" />
-      <workItem from="1687239718191" duration="3529000" />
+      <workItem from="1687239718191" duration="3999000" />
     </task>
     <task id="LOCAL-00001" summary="Aiming is there but its innacturate :(">
       <created>1684248961404</created>
@@ -576,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687166044189</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fixed issue with foreach loop making the game crash">
+      <created>1687247043713</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1687247043713</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +596,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added Fishtype to Fish struct" />
     <MESSAGE value="Removed debug logs" />
     <MESSAGE value="made texture into texture2D" />
     <MESSAGE value="Made texture editable everywhere" />
@@ -611,7 +620,8 @@
     <MESSAGE value="Fixed bugs with bubbles" />
     <MESSAGE value="Increasing speed should be fixed" />
     <MESSAGE value="Main Objective reached event added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main Objective reached event added" />
+    <MESSAGE value="fixed issue with foreach loop making the game crash" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with foreach loop making the game crash" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
