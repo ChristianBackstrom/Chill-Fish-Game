@@ -229,7 +229,7 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 	if (!bStandardBubble && !bIsUpgradedCharging) return;
 
 	GetWorldTimerManager().ClearAllTimersForObject(this);
-
+	bool IsDefault = bIsDefaultCharging;
 	bIsDefaultCharging = false;
 	bIsUpgradedCharging = false;
 
@@ -273,6 +273,7 @@ void ABubbleShooter::Fire(const FInputActionValue& ActionValue, bool bStandardBu
 			if (Index >= 0)
 				Timers[Index] = Cooldowns[Index];
 		}
+		if (!IsDefault) return;
 		
 		TArray<FHitResult> HitResults;
 		FVector TraceStart = ChargingBubble->GetActorLocation();

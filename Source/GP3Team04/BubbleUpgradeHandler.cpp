@@ -8,23 +8,35 @@
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 
+
 // Sets default values
 ABubbleUpgradeHandler::ABubbleUpgradeHandler()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
-	
+}
+
+bool FObjective::Completed() const
+{
+	for (FFishAmount FishAmount : FishToCatch)
+	{
+		if (FishAmount.Completed())
+			continue;
+
+		return false;
+	}
+	return true;
 }
 
 // Called when the game starts or when spawned
 void ABubbleUpgradeHandler::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	CurrentIndex = 0;
 	if (Objectives.Num() > 0)
 		CurrentObjective = Objectives[CurrentIndex];
-	
+
 	FishingGameMode = Cast<AFishingGamemode>(UGameplayStatics::GetGameMode(GetWorld()));
 	FishingGameInstance = Cast<UFishingGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
 	BubbleShooter = Cast<ABubbleShooter>(UGameplayStatics::GetActorOfClass(GetWorld(), ABubbleShooter::StaticClass()));
@@ -46,11 +58,13 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 	CurrentObjective.FishCaught(Fish);
 
 	UpdateObjective();
-	
+
 	if (CurrentObjective.Completed())
 	{
 		TArray<TSubclassOf<ABubble>> Bubbles = CurrentObjective.AvailableBubbles;
+
 		TArray<TSubclassOf<ABubble>> ValidBubbles = Bubbles;
+		
 		for (TSubclassOf<ABubble> Bubble : Bubbles)
 		{
 			if (BubbleShooter->UpgradedBubbles.Contains(Bubble))
@@ -60,11 +74,11 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 		}
 
 		Bubbles = ValidBubbles;
-		
+
 		CurrentIndex++;
 		if (Bubbles.Num() > 0)
 			ObjectiveCompleted(Bubbles);
-		
+
 
 		if (CurrentIndex >= Objectives.Num())
 		{
@@ -78,6 +92,3 @@ void ABubbleUpgradeHandler::FishCaught(const FFish& Fish)
 		NextObjective(CurrentObjective);
 	}
 }
-
-
-

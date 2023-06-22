@@ -55,15 +55,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<TSubclassOf<ABubble>> AvailableBubbles;
 
-	bool Completed() const
-	{
-		for (FFishAmount FishAmount : FishToCatch)
-		{
-			if (FishAmount.Completed()) continue;
-			return false;
-		}
-		return true;
-	}
+	bool Completed() const;
 
 
 	void FishCaught(const FFish& Fish)
@@ -72,10 +64,12 @@ public:
 
 		for (int i = 0; i < FishToCatch.Num(); ++i)
 		{
-			if (FishToCatch[i].Type != Type && FishToCatch[i].Type != AnyFish) continue;
+			FFishAmount& Fish = FishToCatch[i];
+			if (Fish.Type != Type && Fish.Type != AnyFish)
+				continue;
 			
-			FishToCatch[i].NeededAmount--;
-			FishToCatch[i].NeededAmount = FMath::Clamp(FishToCatch[i].NeededAmount, 0, 100000000);
+			Fish.NeededAmount--;
+			Fish.NeededAmount = FMath::Clamp(Fish.NeededAmount, 0, 100000000);
 		}
 	}
 };
