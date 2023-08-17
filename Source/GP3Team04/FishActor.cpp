@@ -95,7 +95,8 @@ void AFishActor::MoveToNewLocation(const FVector& TargetLocation, float DeltaTim
 
     SetActorLocation(NewLocation);
 
-    const float SquaredDistanceThreshold = 100.f * 100.f;
+    const float SquaredDistanceThreshold = 200.f;
+    
     if (FVector::DistSquared(CurrentLocation, TargetLocation) < SquaredDistanceThreshold)
     {
         bReachedLocation = false;
@@ -118,7 +119,6 @@ void AFishActor::AvoidCollision()
 {
     if (!bBoostActive)
     {
-        // SetActorLocation(OldLocation);
         MoveToRandomLocation(GetActorLocation());
         ApplyStartleBoost();
         bReachedLocation = false;
@@ -148,7 +148,6 @@ void AFishActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Oth
 {
     if (!bEnabled) return;
     
-    // SetActorLocation(OldLocation);
     bReachedLocation = false;
 
     AvoidCollision();
